@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+<link href="assets/images/favicon.png" rel="icon" />
+<title>Trabalho Final - UFCD 5414</title>
+<meta name="description" content="Trabalho final da UFCD 5414 - Programação Web (Client side)">
+<meta name="author" content="harnishdesign.net">
+
+<!-- Stylesheet
+============================== -->
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
+<!-- Font Awesome Icon -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/magnific-popup/magnific-popup.min.css" />
+<!-- Highlight Syntax -->
+<link rel="stylesheet" type="text/css" href="assets/vendor/highlight.js/styles/github.css" />
+<!-- Custom Stylesheet -->
+<link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css" />
+
+<style>
+  .hidden {
+    visibility: hidden;
+  }
+
+  label {            
+    display: block;            
+    margin-bottom: 5px;            
+    font-weight: 600;        
+  }
+
+  input:not([type="checkbox"]), select {            
+    box-sizing: border-box;            
+    padding: 5px;            
+    width: 300px;
+  }
+  
+  input, select {
+    margin-bottom: 20px;    
+  }
+
+</style>
+
+</head>
+
+<body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
+
+<!-- Preloader -->
+<div class="preloader">
+  <div class="lds-ellipsis">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<!-- Preloader End --> 
+
+<!-- Document Wrapper   
+=============================== -->
+<div id="main-wrapper"> 
+  
+  <!-- Header
+  ============================ -->
+  <header id="header" class="sticky-top"> 
+    <!-- Navbar -->
+    <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
+      <div class="container-fluid">
+        <!-- Sidebar Toggler -->
+		    <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
+		
+		    <!-- Logo --> 
+        <a class="logo ml-md-3" href="index.html" title="iDocs Template"> <img src="assets/images/logo.png" alt="iDocs Template"/> </a> 
+		    <span class="text-2 ml-2">v1.0</span> 
+        <!-- Logo End -->
+        
+		    <div id="header-nav" class="collapse navbar-collapse justify-content-end"></div>
+        
+      </div>
+    </nav>
+    <!-- Navbar End --> 
+  </header>
+  <!-- Header End --> 
+  
+  <!-- Content
+  ============================ -->
+  <div id="content" role="main">
+    
+	<!-- Sidebar Navigation
+	============================ -->
+	<div class="idocs-navigation bg-dark docs-navigation-dark">
+      <ul class="nav flex-column ">
+        <li class="nav-item"><a class="nav-link active" href="#apresentacao">Apresentação</a>
+          <ul class="nav flex-column">
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#exercicios1-10">Exercício 1-10</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#exercicio1">Exercício 1</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio2">Exercício 2</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio3">Exercício 3</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio4">Exercício 4</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio5">Exercício 5</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio6">Exercício 6</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio7">Exercício 7</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio8">Exercício 8</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio9">Exercício 9</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio10">Exercício 10</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#exercicios11-20">Exercício 11-20</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#exercicio11">Exercício 11</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio12">Exercício 12</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio13">Exercício 13</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio14">Exercício 14</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio15">Exercício 15</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio16">Exercício 16</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio17">Exercício 17</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio18">Exercício 18</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio19">Exercício 19</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio20">Exercício 20</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#exercicios21-30">Exercício 21-30</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#exercicio21">Exercício 21</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio22">Exercício 22</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio23">Exercício 23</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio24">Exercício 24</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio25">Exercício 25</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio26">Exercício 26</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio27">Exercício 27</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio28">Exercício 28</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio29">Exercício 29</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio30">Exercício 30</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#exercicios31-40">Exercício 31-40</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#exercicio31">Exercício 31</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio32">Exercício 32</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio33">Exercício 33</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio34">Exercício 34</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio35">Exercício 35</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio36">Exercício 36</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio37">Exercício 37</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio38">Exercício 38</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio39">Exercício 39</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio40">Exercício 40</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#exercicios41-50">Exercício 41-50</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#exercicio41">Exercício 41</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio42">Exercício 42</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio43">Exercício 43</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio44">Exercício 44</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio45">Exercício 45</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio46">Exercício 46</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio47">Exercício 47</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio48">Exercício 48</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio49">Exercício 49</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio50">Exercício 50</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link active" href="#exercicios51-60">Exercício 51-60</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#exercicio51">Exercício 51</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio52">Exercício 52</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio53">Exercício 53</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio54">Exercício 54</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio55">Exercício 55</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio56">Exercício 56</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio57">Exercício 57</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio58">Exercício 58</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio59">Exercício 59</a></li>
+            <li class="nav-item"><a class="nav-link" href="#exercicio60">Exercício 60</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Docs Content
+	  ============================ -->
+    <div class="idocs-content">
+      <div class="container"> 
+        
+        <!-- Getting Started
+		    ============================ -->
+        <section id="apresentacao">
+        <h1>Trabalho Final</h1>
+        <h2>Apresentação</h2>
+		    <hr>
+		    <div class="row">
+		    	<div class="col-sm-6 col-lg-4">
+		    		<ul class="list-unstyled">
+		    			<li><strong>Autor:</strong> Diogo Costa Alves</li>
+		    		</ul>
+		    	</div>
+		    	<div class="col-sm-6 col-lg-4">
+		    		<ul class="list-unstyled">
+		    			<li><strong>Conclusão:</strong> 29 de Maio, 2023</li>
+		    		</ul>
+		    	</div>
+		    </div>
+        <p class="alert alert-info">If you have any questions that are beyond the scope of this help file, Please feel free to email via <a target="_blank" href="https://themeforest.net/user/harnishdesign/#contact?ref=HarnishDesign">Item Support Page</a>.</p>
+        </section>
+        
+		    <hr class="divider">
+		
+        <!-- #region Exercícios 1 a 10 -->
+        <section id="exercicios1-10">
+          <section id="exercicio1">
+            <h2>Exercício 1</h2>
+            <p class="lead">
+              Crie um programa que mostre numa caixa de diálogo “Alert” a mensagem: “É preciso fazer todos os exercícios para aprender”<br/>
+              A caixa “Alert” será exibida depois do utilizador clicar no botão.
+            </p>
+
+            <pre><code>
+              function mostrarAlerta() {
+                alert("É preciso fazer todos os exercícios para aprender");
+              }
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 1</button>
+          </section>          
+          <hr class="divider">
+
+          <section id="exercicio2">
+            <h2>Exercício 2</h2>
+            <p class="lead">
+              Crie um programa que mostre uma caixa de diálogo “Confirm” a mensagem: “Deseja continuar a realizar os exercícios?”
+              <ol style="list-style-type: lower-latin;" class="lead">
+                <li>Se o utilizador clicar “Ok” mostre a mensagem “Bem escolhido”</li>
+                <li>Se o utilizador clicar “Cancelar” mostre a mensagem “Já chega de JavaScript”</li>
+              </ol>
+            </p>
+
+            <pre><code>
+              function mostrarConfirmacao() {
+                var resposta = confirm("Deseja continuar a realizar os exercícios?");
+                
+                if (resposta) {
+                  alert("Bem escolhido");
+                } else {
+                  alert("Já chega de JavaScript");
+                }
+              }
+            </code></pre>
+
+            <button onclick="exercicio2()" class="btn btn-primary btn-lg">Validar Exercício 2</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio3">
+            <h2>Exercício 3</h2>
+            <p class="lead">
+              Crie um programa que leia o nome do utilizador através de uma caixa de diálogo “Prompt” e mostre na página Web a mensagem: <br/>
+              “O Formando” + [nome formando] + ” está aprovado”. <br/>
+              Se o utilizador clicar em “Cancelar” não deverá ser exibido a mensagem. <br/>
+              (Dica: utilize o <code>innerHTML</code>)
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function exibirMensagemAprovado() {
+                  var nomeFormando = prompt("Digite o nome do formando:");
+                  
+                  if (nomeFormando !== null && nomeFormando !== "") {
+                    var mensagem = "O Formando " + nomeFormando + " está aprovado";
+                    document.getElementById("mensagemAprovado").innerHTML = mensagem;
+                  }
+                }
+              &lt;/script&gt;
+
+              &lt;p id="mensagemAprovado"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <p id="mensagemExercicio3" class="hidden"></p>
+
+            <button onclick="exercicio3()" class="btn btn-primary btn-lg">Validar Exercício 3</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio4">
+            <h2>Exercício 4</h2>
+            <p class="lead">
+              Crie um programa que leia o nome e idade do utilizador através de caixas de texto e mostre na página Web a mensagem: <br/>
+              “O Formando ” + [nome formando] + ” tem ” + [idade formando ] + “ anos”. <br/>
+              (Dica: utilize o <code>innerHTML</code>)
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function exibirMensagem() {
+                  var nomeFormando = document.getElementById("nome").value;
+                  var idadeFormando = document.getElementById("idade").value;
+                  
+                  var mensagem = "O Formando " + nomeFormando + " tem " + idadeFormando + " anos";
+                  document.getElementById("mensagem").innerHTML = mensagem;
+                }
+              &lt;/script&gt;
+
+              &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+              &lt;input type="text" id="nome" placeholder="Digite seu nome"&gt;
+
+              &lt;label for="idade"&gt;Idade:&lt;/label&gt;
+              &lt;input type="text" id="idade" placeholder="Digite sua idade"&gt;
+
+              &lt;p id="mensagem" class="hidden"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <label for="nomeEx4" class="label-width-sm">Nome</label>
+            <input type="text" id="nomeEx4" placeholder="Digite seu nome">
+            <br/>
+            <label for="idadeEx4" class="label-width-sm">Idade</label>
+          	<input type="number" id="idadeEx4" placeholder="Digite sua idade">
+            
+            <p id="mensagemEx4" class="hidden" style="margin-top: 10px;"></p>
+
+            <button onclick="exercicio4()" class="btn btn-primary btn-lg">Validar Exercício 4</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio5">
+            <h2>Exercício 5</h2>
+            <p class="lead">
+              Crie um programa que mostre na “console” a mensagem: <br/>
+              “Eu sou o [nome formando] e sou adepto do [clube de futebol]"
+            </p>
+
+            <pre><code>
+              function exibirClubePreferido(){
+                var nomeFormando = prompt("Insira o seu nome:");
+                var clubeFutebol = prompt("Insira o seu clube de futebol preferido:");
+                
+                console.log("Eu sou o " + nomeFormando + " e sou adepto do " + clubeFutebol);
+              }
+            </code></pre>
+
+            <p id="mensagemEx5" class="hidden">Pressione <code>Ctrl + Shift + J</code> para verificar o output</p>
+
+            <button onclick="exercicio5()" class="btn btn-primary btn-lg">Validar Exercício 5</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio6">
+            <h2>Exercício 6</h2>
+            <p class="lead">
+              Crie um programa que leia do utilizador os seguintes dados e de seguida mostre-os num parágrafo <code>&lt;p&gt;</code>
+              <ul class="lead">
+                <li>Nome: [Nome do formando]</li>
+                <li>Estado civil: (Casado; Solteiro; Divorciado; Viúvo)</li>
+                <li>Idade: [Idade formando]</li>
+                <li>Altura: [Altura do formando]</li>
+                <li>Sócio: [Sim/Não]</li>
+                <li>Email: [Email do formando]</li>
+              </ul>                
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function exibirDados() {
+                  var nomeFormando = document.getElementById("nome").value;
+                  var estadoCivilFormando = document.getElementById("estadoCivil").value;
+                  var idadeFormando = document.getElementById("idade").value;
+                  var alturaFormando = document.getElementById("altura").value;
+                  var socioFormando = document.getElementById("socio").checked ? "Sim" : "Não";
+                  var emailFormando = document.getElementById("email").value;
+              
+                  var mensagem =  "Nome: " + nomeFormando + "&lt;br&gt;" +
+                                  "Estado Civil: " + estadoCivilFormando + "&lt;br&gt;" +
+                                  "Idade: " + idadeFormando + "&lt;br&gt;" +
+                                  "Altura: " + alturaFormando + "&lt;br&gt;" +
+                                  "Sócio: " + socioFormando + "&lt;br&gt;" +
+                                  "Email: " + emailFormando;
+                  
+                  document.getElementById("dados").innerHTML = mensagem;
+                }
+              &lt;/script&gt;
+
+              &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+              &lt;input type="text" id="nome" placeholder="Digite seu nome"&gt;
+
+              &lt;label for="estadoCivil"&gt;Estado Civil:&lt;/label&gt;
+              &lt;select id="estadoCivil"&gt;
+                &lt;option value="Casado"&gt;Casado&lt;/option&gt;
+                &lt;option value="Solteiro"&gt;Solteiro&lt;/option&gt;
+                &lt;option value="Divorciado"&gt;Divorciado&lt;/option&gt;
+                &lt;option value="Viúvo"&gt;Viúvo&lt;/option&gt;
+              &lt;/select&gt;
+
+              &lt;label for="idade"&gt;Idade:&lt;/label&gt;
+              &lt;input type="text" id="idade" placeholder="Digite sua idade"&gt;
+
+              &lt;label for="altura"&gt;Altura:&lt;/label&gt;
+              &lt;input type="text" id="altura" placeholder="Digite sua altura"&gt;
+
+              &lt;label for="socio"&gt;Sócio:&lt;/label&gt;
+              &lt;input type="checkbox" id="socio"&gt;
+
+              &lt;label for="email"&gt;Email:&lt;/label&gt;
+              &lt;input type="email" id="email" placeholder="Digite seu email"&gt;
+
+              &lt;button onclick="exibirDados()"&gt;Clique aqui&lt;/button&gt;
+
+              &lt;p id="dados"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <label for="nomeEx6" class="label-width-md">Nome</label>
+            <input type="text" id="nomeEx6" placeholder="Digite seu nome"><br/>
+
+            <label for="estadoCivilEx6" class="label-width-md">Estado Civil</label>
+            <select id="estadoCivilEx6">
+              <option value="Casado">Casado</option>
+              <option value="Solteiro">Solteiro</option>
+              <option value="Divorciado">Divorciado</option>
+              <option value="Viúvo">Viúvo</option>
+            </select><br/>
+
+            <label for="idadeEx6" class="label-width-md">Idade</label>
+            <input type="text" id="idadeEx6" placeholder="Digite sua idade"><br/>
+  
+
+            <label for="alturaEx6" class="label-width-md">Altura</label>
+            <input type="text" id="alturaEx6" placeholder="Digite sua altura"><br/>
+
+
+            <label for="socioEx6" class="label-width-md">Sócio</label>
+            <input type="checkbox" id="socioEx6" ><br/>
+
+            <label for="emailEx6" class="label-width-md">Email</label>
+            <input type="email" id="emailEx6" placeholder="Digite seu email"><br/>
+
+            <p id="mensagemEx6" class="hidden" style="margin-top: 10px;"></p>
+
+            <button onclick="exercicio6()" class="btn btn-primary btn-lg">Validar Exercício 6</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio7">
+            <h2>Exercício 7</h2>
+            <p class="lead">
+              Crie um programa que mostre na página Web a data atual do sistema: <br/>
+              (Dica: utilize a Class <code>Date</code>)
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function mostrarDataAtual() {
+                  var dataAtual = new Date();
+                  var dia = dataAtual.getDate();
+                  var mes = dataAtual.getMonth() + 1;
+                  var ano = dataAtual.getFullYear();
+                
+                  var mensagem = "Data atual: " + dia + "/" + mes + "/" + ano;
+                  document.getElementById("dataAtual").innerHTML = mensagem;
+                }
+              &lt;/script&gt;
+
+            
+              &lt;p id="dataAtual"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <p id="dataAtualEx7" class="hidden"></p>
+
+            <button onclick="exercicio7()" class="btn btn-primary btn-lg">Validar Exercício 7</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio8">
+            <h2>Exercício 8</h2>
+            <p class="lead">
+              Crie um programa que mostre na página Web a mensagem “Bom dia”, “Boa tarde”, “Boa noite” em conformidade com a hora do sistema.
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function mostrarSaudacao(){
+                  var dataAtual = new Date();
+                  var hora = dataAtual.getHours();
+                
+                  var mensagem;
+                
+                  if (hora >= 6 && hora &lt; 12) {
+                    mensagem = "Bom dia";
+                  } else if (hora >= 12 && hora &lt; 18) {
+                    mensagem = "Boa tarde";
+                  } else {
+                    mensagem = "Boa noite";
+                  }
+                
+                  document.getElementById("mensagemSaudacao").innerHTML = mensagem;
+                }
+              &lt;/script&gt;
+
+              &lt;p id="mensagemSaudacao"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <p id="mensagemEx8" class="hidden"></p>
+
+            <button onclick="exercicio8()" class="btn btn-primary btn-lg">Validar Exercício 8</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio9">
+            <h2>Exercício 9</h2>
+            <p class="lead">
+              Crie um programa com um botão que permita imprimir (na impressora) a página Web <br/>
+              (Dica: Utilize o objeto <code>Window</code>)
+            </p>
+
+            <pre><code>
+              &lt;button onclick="window.print()"&gt;Imprimir&lt;/button&gt;
+            </code></pre>
+
+            <button onclick="exercicio9()" class="btn btn-primary btn-lg">Validar Exercício 9</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio10">
+            <h2>Exercício 10</h2>
+            <p class="lead">
+              Crie um programa com um botão que mostre o endereço (URL) da página Web <br/>
+              (Dica: Utilize o objeto <code>Document</code>)
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function mostrarURL() {
+                  var enderecoURL = document.URL;
+                  document.getElementById("urlPagina").innerHTML = mensagem;
+                }
+              &lt;/script&gt;
+
+              &lt;p id="urlPagina"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <p id="mensagemEx10" class="hidden"></p>
+
+            <button onclick="exercicio10()" class="btn btn-primary btn-lg">Validar Exercício 10</button>
+          </section>
+          <hr class="divider">
+        </section>
+        <!-- #endregion -->
+
+        <!-- #region Exercícios 11 a 20 -->
+        <section id="exercicios11-20">
+          <section id="exercicio11">
+            <h2>Exercício 11</h2>
+            <p class="lead">
+              Escreva um programa que leia um número inteiro do utilizador e mostre se é positivo ou negativo. 
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function verificarPositivoNegativo() {
+                  var numero = parseInt(document.getElementById("numero").value);
+                  
+                  if (numero > 0) {
+                  document.getElementById("resultado").innerHTML = "O número é positivo.";
+                  } else if (numero &lt; 0) {
+                  document.getElementById("resultado").innerHTML = "O número é negativo.";
+                  } else {
+                  document.getElementById("resultado").innerHTML = "O número é zero.";
+                  }
+                }
+              &lt;/script&gt;
+
+              &lt;label for="numero"&gt;Digite um número inteiro:&lt;/label&gt;
+              &lt;input type="number" id="numero"&gt;
+
+              &lt;button onclick="verificarPositivoNegativo()"&gt;Verificar&lt;/button&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <label for="numeroEx11">Digite um número inteiro:</label>
+            <input type="number" id="numeroEx11">
+
+            <p id="mensagemEx11" class="hidden"></p>
+
+            <button onclick="exercicio11()" class="btn btn-primary btn-lg">Validar Exercício 11</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio12">
+            <h2>Exercício 12</h2>
+            <p class="lead">
+              Escreva um programa que leia dois números ao utilizador e mostre qual deles é o maior.
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function encontrarMaior() {
+                  var numero1 = parseFloat(document.getElementById("numero1").value);
+                  var numero2 = parseFloat(document.getElementById("numero2").value);
+                  
+                  if (numero1 > numero2) {
+                  document.getElementById("resultado").innerHTML = "O primeiro número é maior.";
+                  } else if (numero2 > numero1) {
+                  document.getElementById("resultado").innerHTML = "O segundo número é maior.";
+                  } else {
+                  document.getElementById("resultado").innerHTML = "Os números são iguais.";
+                  }
+                }
+              &lt;/script&gt;
+
+              &lt;label for="numero1"&gt;Digite o primeiro número:&lt;/label&gt;
+              &lt;input type="number" id="numero1"&gt;
+
+              &lt;label for="numero2"&gt;Digite o segundo número:&lt;/label&gt;
+              &lt;input type="number" id="numero2"&gt;
+
+              &lt;button onclick="encontrarMaior()"&gt;Encontrar Maior&lt;/button&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+            </code></pre>
+
+            <label for="num1Ex12">Digite o primeiro número:</label>
+            <input type="number" id="num1Ex12">
+
+            <label for="num2Ex12">Digite o segundo número:</label>
+            <input type="number" id="num2Ex12">
+
+            <p id="mensagemEx12" class="hidden"></p>
+
+            <button onclick="exercicio12()" class="btn btn-primary btn-lg">Validar Exercício 12</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio13">
+            <h2>Exercício 13</h2>
+            <p class="lead">
+              Crie um programa que gera um número aleatório entre 1 e 6 e pergunte ao utilizador qual é o seu palpite. Mostre a quantidade de palpites certos/errados <br/>
+              (Dica: utilize a Class <code>Math</code> para gerar números aleatórios)
+            </p>
+
+            <pre><code>
+              &lt;script&gt;
+                function novoJogo() {      
+                  var numeroAleatorio = Math.floor(Math.random() * 6) + 1;
+                  var totalPalpites = 0;
+                  
+                  while (true) {
+                    var palpite = parseInt(prompt("Digite o seu palpite (entre 1 e 6):"));
+                  
+                    if (isNaN(palpite) || palpite &lt; 1 || palpite &gt; 6) {
+                      alert("Palpite inválido! Por favor, digite um número entre 1 e 6.");
+                      continue;
+                    }
+                  
+                    totalPalpites++;
+
+                    var resultado = verificarPalpite(palpite, numeroAleatorio);
+                    if (resultado === "correto") {
+                      alert("Palpite correto!");
+                      document.getElementById("resultado").innerHTML = "&lt;strong style='color:green;'&gt;Você acertou!&lt;/strong&gt; &lt;br/&gt;" +
+                                                                       "Total de palpites: " + totalPalpites;
+                      break;
+                    } else {
+                      var continuar = confirm("Palpite errado! \nDeseja fazer outro palpite?");
+                      if (continuar) {
+                        continue;
+                      }
+                      else{
+                        document.getElementById("resultado").innerHTML = "&lt;strong style='color:red;'&gt;Você perdeu!&lt;/strong&gt; &lt;br/&gt;" +
+                                                                         "Total de palpites: " + totalPalpites;
+                        break;
+                      }
+                    }
+                  }    
+
+                  function verificarPalpite(palpite, numeroGerado) {
+                    if (palpite === numeroGerado) {
+                      return "correto";
+                    } else {
+                      return "errado";
+                    }
+                  }
+                }
+              &lt;/script&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+              
+              &lt;button onclick="novoJogo()"&gt;Novo Jogo&lt;/button&gt;
+            </code></pre>
+
+            <p id="mensagemEx13"></p>
+
+            <button onclick="exercicio13()" class="btn btn-primary btn-lg">Validar Exercício 13</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio14">
+            <h2>Exercício 14</h2>
+            <p class="lead">
+              Crie um programa que leia 3 números do utilizador e mostre-os por ordem crescente.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio14()" class="btn btn-primary btn-lg">Validar Exercício 14</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio15">
+            <h2>Exercício 15</h2>
+            <p class="lead">
+              Crie um programa que leia 3 números do utilizador e mostre o que está mais perto de 100.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio15()" class="btn btn-primary btn-lg">Validar Exercício 15</button>
+          </section>
+          <hr class="divider">
+        
+          <section id="exercicio16">
+            <h2>Exercício 16</h2>
+            <p class="lead">
+              Crie um programa que leia a nota quantitativa de um teste e mostre a nota qualitativa <br/>
+              <ul class="lead">
+                <li>>0..5 - Muito insuficiente</li>
+                <li>>5..9,5 – Insuficiente</li>
+                <li>>9,5..14 - Suficiente</li>
+                <li>>14..16 – Bom</li>
+                <li>>16..20 – Muito bom</li>
+              </ul>                
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 16</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio17">
+            <h2>Exercício 17</h2>
+            <p class="lead">
+              Crie um programa que leia uma frase do utilizador e mostre a mensagem sem a palavra “não” caso esta exista. <br/>
+              (Dica: Utilize o método <code>split</code>)
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 17</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio18">
+            <h2>Exercício 18</h2>
+            <p class="lead">
+              Crie um programa que leia uma frase do utilizador e mostre a quantos caracteres numéricos existem na frase.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+            
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 18</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio19">
+            <h2>Exercício 19</h2>
+            <p class="lead">
+              Crie um programa que leia uma frase do utilizador e mostre a frase com os caracteres invertidos.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 19</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio20">
+            <h2>Exercício 20</h2>
+            <p class="lead">
+              Crie uma função receba um valor em euros e mostre o valor convertido em dólares. O valor do câmbio deverá ser dado pelo utilizador. 
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 20</button>
+          </section>
+          <hr class="divider">
+        </section>
+        <!-- #endregion -->
+        
+        <!-- Exercícios 21 a 30
+		    ============================ -->
+        <section id="exercicios21-30">
+          <section id="exercicio21">
+            <h2>Exercício 21</h2>
+            <p class="lead">
+              Crie uma função que receba um número e converta-o num número negativo.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 21</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio22">
+            <h2>Exercício 22</h2>
+            <p class="lead">
+              Crie uma função receba um valor (com imposto) e a percentagem de imposto e devolva o valor sem o imposto assim como o valor do imposto.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio23">
+            <h2>Exercício 23</h2>
+            <p class="lead">
+              Crie uma função que receba um valor e a percentagem de imposto e devolva o valor com o imposto.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio24">
+            <h2>Exercício 24</h2>
+            <p class="lead">
+              Crie uma função que gere uma password com letras aleatórias. A quantidade de caracteres deverá ser definida pelo utilizador.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio25">
+            <h2>Exercício 25</h2>
+            <p class="lead">
+              Crie uma função que devolva o maior número de um array com 100 números aleatórios.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+
+          <section id="exercicio26">
+            <h2>Exercício 26</h2>
+            <p class="lead">
+              Crie uma função que devolva o menor número de um array com 100 números aleatórios.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio27">
+            <h2>Exercício 27</h2>
+            <p class="lead">
+              Crie uma função que receba a distância total (em km) percorrida por um automóvel e a quantidade de combustível (em litros) consumida para percorrê-la, e devolva o consumo médio de combustível.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio28">
+            <h2>Exercício 28</h2>
+            <p class="lead">
+              Crie uma função que receba dois valores inteiros e apresente a diferença do maior pelo menor
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio29">
+            <h2>Exercício 29</h2>
+            <p class="lead">
+              Crie um programa que simule o lançamento de um dado 35000 vezes e exiba a quantidade de vezes que saiu cada número
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio30">
+            <h2>Exercício 30</h2>
+            <p class="lead">
+              Crie um programa que leia do utilizador uma string e verifique se é um número. Se não for um número mostre uma mensagem de erro.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+        </section>
+
+        <!-- Exercícios 31 a 40
+		    ============================ -->
+        <section id="exercicios31-40">
+          <section id="exercicio31">
+            <h2>Exercício 31</h2>
+            <p class="lead">
+              Crie um programa que leia do utilizador duas strings (password, confirmação da password) e verifique se são iguais. Se não for mostre uma mensagem de erro.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio32">
+            <h2>Exercício 32</h2>
+            <p class="lead">
+              Crie um programa que desenhe um retângulo azul
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio33">
+            <h2>Exercício 33</h2>
+            <p class="lead">
+              Crie um programa que desenhe um círculo vermelho
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio34">
+            <h2>Exercício 34</h2>
+            <p class="lead">
+              Crie um programa que leia um endereço de email e mostre metade escondido <br/>
+              Exemplo: mailncarvalho@gmail.com <br/>
+              Resultado: mailnc…….@gmail.com
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio35">
+            <h2>Exercício 35</h2>
+            <p class="lead">
+              Crie um programa que leia do utilizador o nome e imprimir:
+              <ul class="lead">
+                <li>Todo o nome:</li>
+                <li>Primeira Letra do Nome:</li>
+                <li>Ultima letra do nome:</li>
+                <li>Da primeira letra até à 3ª:</li>
+                <li>Todas as letras menos a primeira:</li>
+                <li>Duas ultimas letras:</li>
+                <li>Todos os nomes separados por espaços (<code>split</code>):</li>
+              </ul>
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio36">
+            <h2>Exercício 36</h2>
+            <p class="lead">
+              Crie um programa que mostre o seguinte padrão utilizando ciclos encadeados. O número de linhas deverá ser introduzido pelo utilizador (Exemplo para 5 linhas).
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio37">
+            <h2>Exercício 37</h2>
+            <p class="lead">
+              Crie um programa que leia um número do utilizador e mostre a soma dos números de 1 até ao valor introduzido pelo utilizador.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio38">
+            <h2>Exercício 38</h2>
+            <p class="lead">
+              Crie um programa que imprima todos os múltiplos de 3, entre 1 e 100
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio39">
+            <h2>Exercício 39</h2>
+            <p class="lead">
+              Crie um programa que leia uma data e mostre o mês por extenso
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio40">
+            <h2>Exercício 40</h2>
+            <p class="lead">
+              Crie um programa que leia a hora de entrada e saída de um funcionário sabendo que a hora de entrada será sempre inferior a data de saída caso contrário deverá ser exibido uma mensagem de erro.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+        </section>
+
+        <!-- Exercícios 41 a 50
+		    ============================ -->
+        <section id="exercicios41-50">
+          <section id="exercicio41">
+            <h2>Exercício 41</h2>
+            <p class="lead">
+              Crie um programa que leia uma data e mostre o respetivo dia da semana.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio42">
+            <h2>Exercício 42</h2>
+            <p class="lead">
+              Crie um programa que leia a data de nascimento e mostre a respetiva idade.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio43">
+            <h2>Exercício 43</h2>
+            <p class="lead">
+              Crie um programa que simule o concurso do “Preço Certo em Euros”. O programa recebe três valores dados pelos concorrentes e o valor do artigo e mostra o valor mais aproximado que não ultrapassou o valor do artigo.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio44">
+            <h2>Exercício 44</h2>
+            <p class="lead">
+              Crie um programa que simule as eleições para o cargo de Presidente da Junta sabendo que concorrem 3 candidatos com os respetivos votos atribuídos pelo utilizador. Mostre qual o candidato com mais votos e se houve empates.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio45">
+            <h2>Exercício 45</h2>
+            <p class="lead">
+              Crie um programa conte quantas vezes ocorre cada numero de um array de 100 números positivos aleatórios
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+        
+          <section id="exercicio46">
+            <h2>Exercício 46</h2>
+            <p class="lead">
+              Crie um programa remova os números duplicados de um array de 100 números positivos aleatórios
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio47">
+            <h2>Exercício 47</h2>
+            <p class="lead">
+              Crie um programa mostre qual o numero que ocorre mais vezes num um array de 100 números positivos aleatórios
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio48">
+            <h2>Exercício 48</h2>
+            <p class="lead">
+              Crie um programa que leia um número maior que 1000 e adicione “-“ entre cada dois números pares. <br/>
+              <strong>Exemplo:</strong> 025468 <br/>
+              <strong>Resultado:</strong> 0-254-6-8
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio49">
+            <h2>Exercício 49</h2>
+            <p class="lead">
+              Crie um programa que tenha 2 arrays com 10 valores aleatórios cada. some os valores de cada índice. <br/>
+              <strong>Exemplo:</strong> <br/>
+              array1 = [1,1,2,3,4,0…];<br/>
+              array2 = [3,5,6,7,8,13…];<br/>
+              <br/>
+              <strong>Resultado esperado:</strong><br/>
+              Resultado = [4, 6, 8, 10, 12, 13…]
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio50">
+            <h2>Exercício 50</h2>
+            <p class="lead">
+              Crie um programa que guarde em memória uma matriz (bidimensional) 10linhas x 10colunas com números inteiros aleatórios e mostre a quantidade de elementos entre 10 e 20.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+        </section>
+        
+        <!-- Exercícios 51 a 60
+		    ============================ -->
+        <section id="exercicios51-60">
+          <section id="exercicio51">
+            <h2>Exercício 51</h2>
+            <p class="lead">
+              Crie um programa que leia do utilizador uma palavra/frase e remova todos os caracteres especiais.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio52">
+            <h2>Exercício 52</h2>
+            <p class="lead">
+              Crie um programa que converta um número decimal em binário.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio53">
+            <h2>Exercício 53</h2>
+            <p class="lead">
+              Crie um programa que coloca uma cor aleatória no fundo da página <br/>
+              (Dica: <code>document.body.style.background</code>)
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio54">
+            <h2>Exercício 54</h2>
+            <p class="lead">
+              Crie um programa que leia uma cor e coloca-a no fundo de um parágrafo.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio55">
+            <h2>Exercício 55</h2>
+            <p class="lead">
+              Crie um programa que leia o número de linhas e colunas e mostre uma tabela com o respetivo número de linhas e colunas.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio56">
+            <h2>Exercício 56</h2>
+            <p class="lead">
+              Crie um programa que mostre uma tabela de 3x3. O programa deve de ler o número da linha, coluna e texto e mostre o texto na respetiva linha e coluna da tabela.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio57">
+            <h2>Exercício 57</h2>
+            <p class="lead">
+              Crie um programa que mostre a altura e largura de uma janela sempre que esta for alterada <br/>
+              (Dica: <code>&lt;body onload="getSize()" onresize="getSize()"&gt;</code>)
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio58">
+            <h2>Exercício 58</h2>
+            <p class="lead">
+              Crie um programa que ordene um array de 100 números aleatórios através do algoritmo Bubble Sort.
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio59">
+            <h2>Exercício 59</h2>
+            <p class="lead">
+              Crie um programa que ordene um array de 100 números aleatórios através do algoritmo “Insertion Sort”. <br/>
+              (Dica: <a href="https://www.youtube.com/watch?v=DFG-XuyPYUQ&t=406s" target="_blank">https://www.youtube.com/watch?v=DFG-XuyPYUQ&t=406s</a>)
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+          
+          <section id="exercicio60">
+            <h2>Exercício 60</h2>
+            <p class="lead">
+              Crie uma função que ordene um array de 100 números aleatórios através do algoritmo “Selection Sort”. <br/>
+              (Dica: <a href="https://www.youtube.com/watch?v=f8hXR_Hvybo" target="_blank">https://www.youtube.com/watch?v=f8hXR_Hvybo</a>)
+
+            </p>
+
+            <pre><code>
+                
+            </code></pre>
+
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+          </section>
+          <hr class="divider">
+        </section>
+        
+      </div>
+    </div>	
+  </div>
+  <!-- Content end --> 
+  
+  <!-- Footer
+  ============================ -->
+  <footer id="footer" class="section bg-dark footer-text-light">
+    <div class="container">
+      <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
+        <li><a data-toggle="tooltip" href="https://twitter.com/harnishdesign/" target="_blank" title="" data-original-title="Twitter"><i class="fab fa-twitter"></i></a></li>
+        <li><a data-toggle="tooltip" href="http://www.facebook.com/harnishdesign/" target="_blank" title="" data-original-title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a data-toggle="tooltip" href="http://www.dribbble.com/harnishdesign/" target="_blank" title="" data-original-title="Dribbble"><i class="fab fa-dribbble"></i></a></li>
+        <li><a data-toggle="tooltip" href="http://www.github.com/" target="_blank" title="" data-original-title="GitHub"><i class="fab fa-github"></i></a></li>
+      </ul>
+      <p class="text-center">Copyright &copy; 2020 <a href="http://www.harnishdesign.net/idocs-one-page-documentation-html-template/">iDocs</a>. All Rights Reserved.</p>
+	  <p class="text-2 text-center mb-0">Design &amp; Develop by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a>.</p>
+    </div>
+  </footer>
+  <!-- Footer end -->
+  
+</div>
+<!-- Document Wrapper end --> 
+
+<!-- Back To Top --> 
+<a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
+
+<!-- JavaScript
+============================ -->
+<script src="assets/vendor/jquery/jquery.min.js"></script> 
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<!-- Highlight JS -->
+<script src="assets/vendor/highlight.js/highlight.min.js"></script> 
+<!-- Easing --> 
+<script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script> 
+<!-- Magnific Popup --> 
+<script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
+<!-- Custom Script -->
+<script src="assets/js/theme.js"></script>
+
+<script src="exercicios.js"></script>
+</body>
+</html>
