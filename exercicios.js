@@ -247,4 +247,26 @@ function exercicio15() {
   }
 }
 
+function exercicio16() {
+  var nota = parseFloat(document.getElementById("notaEx16").value);
+  var resultado = "";
+
+  if (nota >= 0 && nota <= 5) {
+  resultado = "Muito insuficiente";
+  } else if (nota > 5 && nota <= 9.5) {
+  resultado = "Insuficiente";
+  } else if (nota > 9.5 && nota <= 14) {
+  resultado = "Suficiente";
+  } else if (nota > 14 && nota <= 16) {
+  resultado = "Bom";
+  } else if (nota > 16 && nota <= 20) {
+  resultado = "Muito bom";
+  } else {
+  resultado = "Nota inválida. Digite um número entre 0 e 20.";
+  }
+
+  document.getElementById("mensagemEx16").innerHTML = "<strong>Nota qualitativa:</strong> " + resultado + "";
+  document.getElementById("mensagemEx16").classList.remove("hidden");
+}
+
 //#endregion

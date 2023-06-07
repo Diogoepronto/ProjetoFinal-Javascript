@@ -805,10 +805,42 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="nota"&gt;Digite a nota do teste:&lt;/label&gt;
+              &lt;input type="number" id="nota"&gt;
+
+              &lt;button onclick="verificarNota()"&gt;Verificar&lt;/button&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              function verificarNota() {
+                var nota = parseFloat(document.getElementById("notaEx16").value);
+                var resultado = "";
+              
+                if (nota &gt;= 0 && nota &lt;= 5) {
+                resultado = "Muito insuficiente";
+                } else if (nota &gt; 5 && nota &lt;= 9.5) {
+                resultado = "Insuficiente";
+                } else if (nota &gt; 9.5 && nota &lt;= 14) {
+                resultado = "Suficiente";
+                } else if (nota &gt; 14 && nota &lt;= 16) {
+                resultado = "Bom";
+                } else if (nota &gt; 16 && nota &lt;= 20) {
+                resultado = "Muito bom";
+                } else {
+                resultado = "Nota inválida. Digite um número entre 0 e 20.";
+                }
+              
+                document.getElementById("resultado").innerHTML = "Nota qualitativa: " + resultado;
+                document.getElementById("resultado").classList.remove("hidden");
+              }               
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 16</button>
+            <label for="notaEx16">Digite a nota do teste:</label>
+            <input type="number" id="notaEx16">
+
+            <p id="mensagemEx16" class="hidden"></p>
+
+            <button onclick="exercicio16()" class="btn btn-primary btn-lg">Validar Exercício 16</button>
           </section>
           <hr class="divider">
           
