@@ -7,6 +7,9 @@ document.querySelectorAll("pre code").forEach((element) =>
   }
 )
 
+const code = document.querySelectorAll("pre code");
+[...code].forEach(el => el.textContent = el.textContent.trim());
+
 //-------------------------- FUNCTIONS --------------------------
 
 //#region EXERCÍCIO 1 ~ 10
@@ -283,4 +286,27 @@ function exercicio17() {
   document.getElementById("mensagemEx17").classList.remove("hidden");
 }
 
+function exercicio18() {
+  var frase = document.getElementById("fraseEx18").value;
+  var numeros = frase.match(/\d/g);
+  var quantidade = numeros ? numeros.length : 0;
+  
+  var resultado = "Quantidade de caracteres numéricos: " + quantidade;
+  
+  document.getElementById("mensagemEx18").innerHTML = "<strong>" + resultado + "</strong>";
+  document.getElementById("mensagemEx18").classList.remove("hidden");
+
+}
+
+function exercicio19() {
+  var frase = document.getElementById("fraseEx19").value;
+  var fraseInvertida = "";
+  
+  for (var i = frase.length - 1; i >= 0; i--) {
+  fraseInvertida += frase[i];
+  }
+  
+  document.getElementById("mensagemEx19").innerHTML = fraseInvertida;
+  document.getElementById("mensagemEx19").classList.remove("hidden");
+}
 //#endregion

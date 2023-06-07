@@ -870,7 +870,7 @@
                   
                   document.getElementById("resultado").innerHTML = resultado;
                 }
-              &lt;/script&gt;                
+              &lt;/script&gt;
             </code></pre>
 
             <label for="fraseEx17">Digite uma frase:</label>
@@ -889,10 +889,32 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="frase"&gt;Digite uma frase:&lt;/label&gt;
+              &lt;input type="text" id="frase"&gt;
+
+              &lt;button onclick="contarNumeros()"&gt;Contar Números&lt;/button&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;script&gt;
+                function contarNumeros() {
+                  var frase = document.getElementById("frase").value;
+                  var numeros = frase.match(/\d/g);
+                  var quantidade = numeros ? numeros.length : 0;
+                  
+                  var resultado = "Quantidade de caracteres numéricos: " + quantidade;
+                  
+                  document.getElementById("resultado").innerHTML = resultado;
+                }
+              &lt;/script&gt;
             </code></pre>
+
+            <label for="fraseEx18">Digite uma frase:</label>
+	          <input type="text" id="fraseEx18">
+
+            <p id="mensagemEx18" class="hidden"></p>
             
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 18</button>
+            <button onclick="exercicio18()" class="btn btn-primary btn-lg">Validar Exercício 18</button>
           </section>
           <hr class="divider">
           
@@ -903,10 +925,33 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="frase"&gt;Digite uma frase:&lt;/label&gt;
+              &lt;input type="text" id="frase"&gt;
+            
+              &lt;button onclick="inverterFrase()"&gt;Inverter&lt;/button&gt;
+            
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+            
+              &lt;script&gt;
+                function inverterFrase() {
+                  var frase = document.getElementById("frase").value;
+                  var fraseInvertida = "";
+                  
+                  for (var i = frase.length - 1; i &gt;= 0; i--) {
+                  fraseInvertida += frase[i];
+                  }
+                  
+                  document.getElementById("resultado").innerHTML = fraseInvertida;
+                }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 19</button>
+            <label for="fraseEx19">Digite uma frase:</label>
+	          <input type="text" id="fraseEx19">
+
+	          <p id="mensagemEx19" class="hidden"></p>
+
+            <button onclick="exercicio19()" class="btn btn-primary btn-lg">Validar Exercício 19</button>
           </section>
           <hr class="divider">
           
