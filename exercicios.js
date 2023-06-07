@@ -1,10 +1,10 @@
 document.querySelectorAll("pre code").forEach((element) =>
-    {
-        let html = element.outerHTML
-        let pattern = html.match(/\s*\n[\t\s]*/)
+  {
+    let html = element.outerHTML
+    let pattern = html.match(/\s*\n[\t\s]*/)
 
-        element.outerHTML = html.replace(new RegExp(pattern, "g"),'\n')
-    }
+    element.outerHTML = html.replace(new RegExp(pattern, "g"),'\n')
+  }
 )
 
 //-------------------------- FUNCTIONS --------------------------
@@ -118,7 +118,7 @@ function exercicio10() {
 //#region EXERCÍCIO 11 ~ 20
 
 function exercicio11(){
-    var numero = parseInt(document.getElementById("numeroEx11").value);
+  var numero = parseInt(document.getElementById("numeroEx11").value);
 	  
 	if (numero > 0) {
 	document.getElementById("mensagemEx11").innerHTML = "<strong>O número é positivo.</strong>";
@@ -128,79 +128,123 @@ function exercicio11(){
 	document.getElementById("mensagemEx11").innerHTML = "<strong>O número é zero.</strong>";
 	}
 
-    document.getElementById("mensagemEx11").classList.remove("hidden");
+  document.getElementById("mensagemEx11").classList.remove("hidden");
 }
 
 function exercicio12() {
-    var numero1 = parseFloat(document.getElementById("num1Ex12").value);
-    var numero2 = parseFloat(document.getElementById("num2Ex12").value);
-    
-    if (numero1 > numero2) {
-      document.getElementById("mensagemEx12").innerHTML = "<strong>O primeiro número é maior.</strong>";
-    } else if (numero2 > numero1) {
-      document.getElementById("mensagemEx12").innerHTML = "<strong>O segundo número é maior.</strong>";
-    } else {
-      document.getElementById("mensagemEx12").innerHTML = "<strong>Os números são iguais.</strong>";
-    }
-
-    document.getElementById("mensagemEx12").classList.remove("hidden");
+  var numero1 = parseFloat(document.getElementById("num1Ex12").value);
+  var numero2 = parseFloat(document.getElementById("num2Ex12").value);
+  
+  if (numero1 > numero2) {
+    document.getElementById("mensagemEx12").innerHTML = "<strong>O primeiro número é maior.</strong>";
+  } else if (numero2 > numero1) {
+    document.getElementById("mensagemEx12").innerHTML = "<strong>O segundo número é maior.</strong>";
+  } else {
+    document.getElementById("mensagemEx12").innerHTML = "<strong>Os números são iguais.</strong>";
   }
 
+  document.getElementById("mensagemEx12").classList.remove("hidden");
+}
+
 function exercicio13() {      
-    var numeroAleatorio = Math.floor(Math.random() * 6) + 1;
-    var totalPalpites = 0;
-    
-    while (true) {
-      var palpite = parseInt(prompt("Digite o seu palpite (entre 1 e 6):"));
-    
-      if (isNaN(palpite) || palpite < 1 || palpite > 6) {
-        alert("Palpite inválido! Por favor, digite um número entre 1 e 6.");
+  var numeroAleatorio = Math.floor(Math.random() * 6) + 1;
+  var totalPalpites = 0;
+  
+  while (true) {
+    var palpite = parseInt(prompt("Digite o seu palpite (entre 1 e 6):"));
+  
+    if (isNaN(palpite) || palpite < 1 || palpite > 6) {
+      alert("Palpite inválido! Por favor, digite um número entre 1 e 6.");
+      continue;
+    }
+  
+    totalPalpites++;
+
+    var resultado = verificarPalpite(palpite, numeroAleatorio);
+    if (resultado === "correto") {
+      alert("Palpite correto!");
+      document.getElementById("mensagemEx13").innerHTML = "<strong style='color:green;'>Você acertou!</strong> <br/>" +
+                                                          "Total de palpites: " + totalPalpites;
+      break;
+    } else {
+      var continuar = confirm("Palpite errado! \nDeseja fazer outro palpite?");
+      if (continuar) {
         continue;
       }
-    
-      totalPalpites++;
-
-      var resultado = verificarPalpite(palpite, numeroAleatorio);
-      if (resultado === "correto") {
-        alert("Palpite correto!");
-        document.getElementById("mensagemEx13").innerHTML = "<strong style='color:green;'>Você acertou!</strong> <br/>" +
+      else{
+        document.getElementById("mensagemEx13").innerHTML = "<strong style='color:red;'>Você perdeu!</strong> <br/>" +
                                                             "Total de palpites: " + totalPalpites;
         break;
-      } else {
-        var continuar = confirm("Palpite errado! \nDeseja fazer outro palpite?");
-        if (continuar) {
-          continue;
-        }
-        else{
-          document.getElementById("mensagemEx13").innerHTML = "<strong style='color:red;'>Você perdeu!</strong> <br/>" +
-                                                              "Total de palpites: " + totalPalpites;
-          break;
-        }
       }
-    }    
-
-    function verificarPalpite(palpite, numeroGerado) {
-        if (palpite === numeroGerado) {
-          return "correto";
-        } else {
-          return "errado";
-        }
     }
+  }    
+
+  function verificarPalpite(palpite, numeroGerado) {
+    if (palpite === numeroGerado) {
+      return "correto";
+    } else {
+      return "errado";
+    }
+  }
 }
 
 function exercicio14() {
-    var numero1 = parseFloat(document.getElementById("numero1").value);
-    var numero2 = parseFloat(document.getElementById("numero2").value);
-    var numero3 = parseFloat(document.getElementById("numero3").value);
+  var numero1 = verificarNumeroValido("primeiro");
+  var numero2 = verificarNumeroValido("segundo");
+  var numero3 = verificarNumeroValido("terceiro");
+  
+  var numerosOrdenados = [numero1, numero2, numero3];
+  numerosOrdenados.sort(function(a, b) {
+    return a - b;
+  });
     
-    var numerosOrdenados = [numero1, numero2, numero3];
-    numerosOrdenados.sort(function(a, b) {
-      return a - b;
-    });
-    
-    var resultado = "Números em ordem crescente: " + numerosOrdenados.join(", ");
-    
-    document.getElementById("resultado").innerHTML = resultado;
+  var resultado = "<strong>Números em ordem crescente:</strong> " + numerosOrdenados.join(", ");
+  
+  document.getElementById("mensagemEx14").innerHTML = resultado;
+  document.getElementById("mensagemEx14").classList.remove("hidden");
+
+  function verificarNumeroValido(numero){
+    var numero = parseFloat(prompt(`Digite o ${numero} número`));
+
+    while (isNaN(numero)) {
+      numero = parseFloat(prompt("Número inválido! \nDigite o número novamente"));
+    }
+    return numero;
   }
+}
+
+function exercicio15() {
+  var numero1 = verificarNumeroValido("primeiro");
+  var numero2 = verificarNumeroValido("segundo");
+  var numero3 = verificarNumeroValido("terceiro");
+
+  var distancia1 = Math.abs(100 - numero1);
+  var distancia2 = Math.abs(100 - numero2);
+  var distancia3 = Math.abs(100 - numero3);
+
+  var resultado = "";
+
+  if (distancia1 < distancia2 && distancia1 < distancia3) {
+    resultado = "<strong>O número mais próximo de 100 é o primeiro número:</strong> " + numero1;
+  } else if (distancia2 < distancia1 && distancia2 < distancia3) {
+    resultado = "<strong>O número mais próximo de 100 é o segundo número:</strong> " + numero2;
+  } else if (distancia3 < distancia1 && distancia3 < distancia2) {
+    resultado = "<strong>O número mais próximo de 100 é o terceiro número:</strong> " + numero3;
+  } else {
+    resultado = "<strong>Os três números possuem a mesma distância de 100.</strong>";
+  }
+
+  document.getElementById("mensagemEx15").innerHTML = resultado;
+  document.getElementById("mensagemEx15").classList.remove("hidden");
+
+  function verificarNumeroValido(numero){
+    var numero = parseFloat(prompt(`Digite o ${numero} número`));
+
+    while (isNaN(numero)) {
+      numero = parseFloat(prompt("Número inválido! \nDigite o número novamente"));
+    }
+    return numero;
+  }
+}
 
 //#endregion

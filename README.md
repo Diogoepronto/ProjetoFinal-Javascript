@@ -1,8 +1,8 @@
 # Projeto Final de Javascript
-Projeto final da UFCD 5414, Programação Web Client Side, com o formador Nuno Carvalho.
-Este projeto usa o template iDocs como front-end.
+Projeto final da UFCD 5414, Programação Web Client Side, com o formador Nuno Carvalho. <br/>
+Este projeto usa o template iDocs como front-end. <br/>
 
-<hr/>
+
 
 # iDocs
 iDocs is free one page documentation html template built with Bootstrap 4. Which helps you to create your offline and online documentation for your themes, templates, plugins and software.

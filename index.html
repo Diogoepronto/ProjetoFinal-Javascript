@@ -705,8 +705,36 @@
             </p>
 
             <pre><code>
-                
+              &lt;script&gt;
+                function ordenarNumeros() {
+                  var numero1 = verificarNumeroValido("primeiro");
+                  var numero2 = verificarNumeroValido("segundo");
+                  var numero3 = verificarNumeroValido("terceiro");
+                  
+                  var numerosOrdenados = [numero1, numero2, numero3];
+                  numerosOrdenados.sort(function(a, b) {
+                    return a - b;
+                  });
+                  
+                  var resultado = "&lt;strong&gt;Números em ordem crescente:&lt;/strong&gt; " + numerosOrdenados.join(", ");
+                  
+                  document.getElementById("numerosOrdenados").innerHTML = resultado;
+
+                  function verificarNumeroValido(numero){
+                    var numero = parseFloat(prompt(`Digite o ${numero} número`));
+              
+                    while (isNaN(numero)) {
+                      numero = parseFloat(prompt("Número inválido! \nDigite o número novamente"));
+                    }
+                    return numero;
+                  }
+                }
+              &lt;/script&gt;
+
+              &lt;p id="numerosOrdenados"&gt;&lt;/p&gt;
             </code></pre>
+
+            <p id="mensagemEx14" class="hidden"></p>
 
             <button onclick="exercicio14()" class="btn btn-primary btn-lg">Validar Exercício 14</button>
           </section>
@@ -719,8 +747,45 @@
             </p>
 
             <pre><code>
+              &lt;script&gt;
+                function numeroMaisProximoDe100() {
+                  var numero1 = verificarNumeroValido("primeiro");
+                  var numero2 = verificarNumeroValido("segundo");
+                  var numero3 = verificarNumeroValido("terceiro");
                 
+                  var distancia1 = Math.abs(100 - numero1);
+                  var distancia2 = Math.abs(100 - numero2);
+                  var distancia3 = Math.abs(100 - numero3);
+                
+                  var resultado = "";
+                
+                  if (distancia1 &lt; distancia2 && distancia1 &lt; distancia3) {
+                    resultado = "&lt;strong&gt;O número mais próximo de 100 é o primeiro número:&lt;/strong&gt; " + numero1;
+                  } else if (distancia2 &lt; distancia1 && distancia2 &lt; distancia3) {
+                    resultado = "&lt;strong&gt;O número mais próximo de 100 é o segundo número:&lt;/strong&gt; " + numero2;
+                  } else if (distancia3 &lt; distancia1 && distancia3 &lt; distancia2) {
+                    resultado = "&lt;strong&gt;O número mais próximo de 100 é o terceiro número:&lt;/strong&gt; " + numero3;
+                  } else {
+                    resultado = "&lt;strong&gt;Os três números possuem a mesma distância de 100.&lt;/strong&gt;";
+                  }
+                
+                  document.getElementById("maisProximoDeCem").innerHTML = resultado;
+                
+                  function verificarNumeroValido(numero){
+                    var numero = parseFloat(prompt(`Digite o ${numero} número`));
+                
+                    while (isNaN(numero)) {
+                      numero = parseFloat(prompt("Número inválido! \nDigite o número novamente"));
+                    }
+                    return numero;
+                  }
+                }
+              &lt;/script&gt;
+
+              &lt;p id="maisProximoDeCem"&gt;&lt;/p&gt;
             </code></pre>
+
+            <p id="mensagemEx15" class="hidden"></p>
 
             <button onclick="exercicio15()" class="btn btn-primary btn-lg">Validar Exercício 15</button>
           </section>
