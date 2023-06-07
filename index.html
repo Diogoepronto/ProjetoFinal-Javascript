@@ -852,10 +852,33 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="frase"&gt;Digite uma frase:&lt;/label&gt;
+              &lt;input type="text" id="frase"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;script&gt;
+                function removerNao() {
+                  var frase = document.getElementById("frase").value;
+                  var palavras = frase.split(" ");
+                  
+                  var novaFrase = palavras.filter(function(palavra) {
+                  return palavra.toLowerCase() !== "não";
+                  });
+                  
+                  var resultado = novaFrase.join(" ");
+                  
+                  document.getElementById("resultado").innerHTML = resultado;
+                }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 17</button>
+            <label for="fraseEx17">Digite uma frase:</label>
+	          <input type="text" id="fraseEx17">
+
+            <p id="mensagemEx17" class="hidden"></p>
+
+            <button onclick="exercicio17()" class="btn btn-primary btn-lg">Validar Exercício 17</button>
           </section>
           <hr class="divider">
           

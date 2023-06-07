@@ -269,4 +269,18 @@ function exercicio16() {
   document.getElementById("mensagemEx16").classList.remove("hidden");
 }
 
+function exercicio17() {
+  var frase = document.getElementById("fraseEx17").value;
+  var palavras = frase.split(" ");
+  
+  var novaFrase = palavras.filter(function(palavra) {
+  return palavra.toLowerCase() !== "não";
+  });
+  
+  var resultado = novaFrase.join(" ");
+  
+  document.getElementById("mensagemEx17").innerHTML = "<strong>" + resultado + "</strong>";
+  document.getElementById("mensagemEx17").classList.remove("hidden");
+}
+
 //#endregion
