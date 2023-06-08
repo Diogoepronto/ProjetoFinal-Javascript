@@ -747,6 +747,10 @@
             </p>
 
             <pre><code>
+              &lt;p id="maisProximoDeCem"&gt;&lt;/p&gt;
+
+              &lt;button onclick="numeroMaisProximoDe100()"&gt;Iniciar&lt;/button&gt;
+
               &lt;script&gt;
                 function numeroMaisProximoDe100() {
                   var numero1 = verificarNumeroValido("primeiro");
@@ -781,8 +785,6 @@
                   }
                 }
               &lt;/script&gt;
-
-              &lt;p id="maisProximoDeCem"&gt;&lt;/p&gt;
             </code></pre>
 
             <p id="mensagemEx15" class="hidden"></p>
@@ -831,7 +833,6 @@
                 }
               
                 document.getElementById("resultado").innerHTML = "Nota qualitativa: " + resultado;
-                document.getElementById("resultado").classList.remove("hidden");
               }               
             </code></pre>
 
@@ -981,7 +982,6 @@
                   var resultado = "&lt;strong&gt;" + valorEmEuros + " EUR = " + valorEmDolares + " USD" + "&lt;/strong&gt;";
                   
                   document.getElementById("resultado").innerHTML = resultado;
-                  document.getElementById("resultado").classList.remove("hidden");
                 }
               &lt;/script&gt;                
             </code></pre>
@@ -1024,7 +1024,6 @@
                   var resultado = "&lt;strong&gt;" + "O número " + numero + " convertido em negativo é: " + numeroNegativo + "&lt;/strong&gt;";
                   
                   document.getElementById("resultado").innerHTML = resultado;
-                  document.getElementById("resultado").classList.remove("hidden");
                 }
               &lt;/script&gt;
             </code></pre>
@@ -1045,10 +1044,43 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="valor"&gt;Digite o valor total:&lt;/label&gt;
+              &lt;input type="number" id="valor"&gt;
+
+              &lt;label for="imposto"&gt;Digite a porcentagem do imposto:&lt;/label&gt;
+              &lt;input type="number" id="imposto"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="calcularValorSemImposto()"&gt;Inverter&lt;/button&gt;
+
+              &lt;script&gt;
+                function calcularValorSemImposto() {
+                  var valorTotal = document.getElementById("valor").value;
+                  var porcentagemImposto = document.getElementById("imposto").value;
+                  
+                  var valorImposto = (valorTotal * porcentagemImposto) / 100;
+                  var valorSemImposto = valorTotal - valorImposto;
+                  
+                  var resultado = "&lt;strong&gt;" +
+                                  "Valor sem o imposto: " + valorSemImposto.toFixed(2) + " €" + "&lt;br/&gt;" +
+                                  "Valor do imposto: " + valorImposto.toFixed(2) + " €" +
+                                  "&lt;/strong&gt;";
+                  
+                  document.getElementById("resultado").innerHTML = resultado;
+                }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 22</button>
+            <label for="valorEx22">Digite o valor total:</label>
+            <input type="number" id="valorEx22">
+
+            <label for="impostoEx22">Digite a porcentagem do imposto:</label>
+            <input type="number" id="impostoEx22">
+
+            <p id="mensagemEx22" class="hidden"></p>
+
+            <button onclick="exercicio22()" class="btn btn-primary btn-lg">Validar Exercício 22</button>
           </section>
           <hr class="divider">
           
@@ -1059,10 +1091,41 @@
             </p>
 
             <pre><code>
+              &lt;label for="valor"&gt;Digite o valor:&lt;/label&gt;
+              &lt;input type="number" id="valor"&gt;
+
+              &lt;label for="imposto"&gt;Digite o percentual do imposto:&lt;/label&gt;
+              &lt;input type="number" id="imposto"&gt;
+
+              &lt;p id="resultado" class="hidden"&gt;&lt;/p&gt;
+
+              &lt;button onclick="calcularValorComImposto()"&gt;Calcular valor&lt;/button&gt;
+
+              &lt;script&gt;
+                function calcularValorComImposto() {
+                  var valorSemImposto = parseFloat(document.getElementById("valor").value);
+                  var porcentagemImposto = parseFloat(document.getElementById("imposto").value) / 100;
                 
+                  var valorComImposto = (valorSemImposto + (valorSemImposto * porcentagemImposto));
+                  
+                  var resultado = "&lt;strong&gt;" +
+                                  "Valor com imposto: " + valorComImposto.toFixed(2) + " €" +
+                                  "&lt;/strong&gt;";
+                
+                  document.getElementById("resultado").innerHTML = resultado;
+                }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 23</button>
+            <label for="valorEx23">Digite o valor:</label>
+            <input type="number" id="valorEx23">
+
+            <label for="impostoEx23">Digite o percentual do imposto:</label>
+            <input type="number" id="impostoEx23">
+
+            <p id="mensagemEx23" class="hidden"></p>
+
+            <button onclick="exercicio23()" class="btn btn-primary btn-lg">Validar Exercício 23</button>
           </section>
           <hr class="divider">
           

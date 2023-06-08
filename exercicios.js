@@ -333,4 +333,36 @@ function exercicio21() {
   document.getElementById("mensagemEx21").classList.remove("hidden");
 }
 
+function exercicio22() {
+  var valorTotal = document.getElementById("valorEx22").value;
+  var porcentagemImposto = document.getElementById("impostoEx22").value;
+
+  var valorImposto = (valorTotal * porcentagemImposto) / 100;
+  var valorSemImposto = valorTotal - valorImposto;
+  
+  var resultado = "<strong>" +
+                  "Valor sem o imposto: " + valorSemImposto.toFixed(2) + " €" + "<br/>" +
+                  "Valor do imposto: " + valorImposto.toFixed(2) + " €" +
+                  "</strong>";
+
+  document.getElementById("mensagemEx22").innerHTML = resultado;
+  document.getElementById("mensagemEx22").classList.remove("hidden");
+}
+
+function exercicio23() {
+  var valorSemImposto = parseFloat(document.getElementById("valorEx23").value);
+  var porcentagemImposto = parseFloat(document.getElementById("impostoEx23").value) / 100;
+
+  var valorComImposto = (valorSemImposto + (valorSemImposto * porcentagemImposto));
+  
+  var resultado = "<strong>" +
+                  "Valor com imposto: " + valorComImposto.toFixed(2) + " €" +
+                  "</strong>";
+
+  document.getElementById("mensagemEx23").innerHTML = resultado;
+  document.getElementById("mensagemEx23").classList.remove("hidden");
+}
+
+
+
 //#endregion
