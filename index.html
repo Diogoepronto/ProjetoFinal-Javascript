@@ -1243,10 +1243,64 @@
             </p>
 
             <pre><code>
-                      
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="encontrarMenorNumero()"&gt;Gerar Array&lt;/button&gt;
+
+              &lt;script&gt;
+              function encontrarMenorNumero() {
+                var min = 1;
+                var max = 1000;
+                const range = max - min + 1;  
+                
+                var numeros = [];
+                
+                for (var i = 0; i &lt; 100; i++) {
+                  const randomNumber = Math.floor(Math.random() * range) + min;
+                  numeros.push(randomNumber);
+                }
+                
+                var menorNumero= numeros[0];
+                
+                for (var i = 1; i &lt; numeros.length; i++) {
+                  if (numeros[i] &lt; menorNumero) {
+                    menorNumero= numeros[i];
+                  }
+                }
+
+                var arrayAExibir = "&lt;table class='table table-sm table-borderless'&gt;&lt;tbody&gt;";
+                var contador = 0;
+
+                for (var i = 0; i &lt; numeros.length; i++){
+                  if (contador == 0){
+                    arrayAExibir += "&lt;tr&gt;"
+                  }
+                  
+                  arrayAExibir += "&lt;td&gt;" + numeros[i] + "&lt;/td&gt;";
+                  
+                  contador++;
+
+                  if (contador == 10){
+                    arrayAExibir += "&lt;/tr&gt;"
+                    contador = 0;
+                  }
+                }
+
+                arrayAExibir += "&lt;/tbody&gt;&lt;/table&gt;";
+
+                var resultado = arrayAExibir + 
+                                "&lt;strong&gt;" +
+                                "O maior número do array é: " + maiorNumero +
+                                "&lt;/strong&gt;";
+                
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 26</button>
+            <p id="mensagemEx26" class="hidden"></p>
+
+            <button onclick="exercicio26()" class="btn btn-primary btn-lg">Validar Exercício 26</button>
           </section>
           <hr class="divider">
           

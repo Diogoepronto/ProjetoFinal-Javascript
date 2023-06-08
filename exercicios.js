@@ -426,5 +426,54 @@ function exercicio25() {
   document.getElementById("mensagemEx25").classList.remove("hidden");
 }
 
+function exercicio26() {
+  var min = 1;
+  var max = 1000;
+  const range = max - min + 1;  
+  
+  var numeros = [];
+  
+  for (var i = 0; i < 100; i++) {
+    const randomNumber = Math.floor(Math.random() * range) + min;
+    numeros.push(randomNumber);
+  }
+  
+  var menorNumero = numeros[0];
+  
+  for (var i = 1; i < numeros.length; i++) {
+    if (numeros[i] < menorNumero) {
+      menorNumero = numeros[i];
+    }
+  }
+
+  var arrayAExibir = "<table class='table table-sm table-borderless'><tbody>";
+  var contador = 0;
+
+  for (var i = 0; i < numeros.length; i++){
+    if (contador == 0){
+      arrayAExibir += "<tr>"
+    }
+    
+    arrayAExibir += "<td>" + numeros[i] + "</td>";
+    
+    contador++;
+
+    if (contador == 10){
+      arrayAExibir += "</tr>"
+      contador = 0;
+    }
+  }
+
+  arrayAExibir += "</tbody></table>";
+
+  var resultado = arrayAExibir + 
+                  "<strong>" +
+                  "O maior número do array é: " + menorNumero +
+                  "</strong>";
+  
+  document.getElementById("mensagemEx26").innerHTML = resultado;
+  document.getElementById("mensagemEx26").classList.remove("hidden");
+}
+
 
 //#endregion
