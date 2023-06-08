@@ -553,6 +553,38 @@ function exercicio31() {
   document.getElementById("mensagemEx31").innerHTML = resultado;
   document.getElementById("mensagemEx31").classList.remove("hidden");
 }
+
+function exercicio32() {
+  var canvas = document.getElementById("myCanvasEx32");
+	var context = canvas.getContext("2d");
+
+	var x = 10;
+	var y = 0;
+	var width = 150;
+	var height = 75;
+
+	context.fillStyle = "blue";
+	context.fillRect(x, y, width, height);
+
+  document.getElementById("myCanvasEx32").style.display = "block";
+}
+
+function exercicio33() {
+  var canvas = document.getElementById("myCanvasEx33");
+	var context = canvas.getContext("2d");
+
+	var x = 100;
+	var y = 100;
+	var radius = 50;
+
+	context.beginPath();
+	context.arc(x, y, radius, 0, 2 * Math.PI);
+	context.fillStyle = "red";
+	context.fill();
+	context.closePath();
+
+  document.getElementById("myCanvasEx33").style.display = "block";
+}
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50

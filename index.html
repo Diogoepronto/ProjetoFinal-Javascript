@@ -1516,10 +1516,29 @@
             </p>
 
             <pre><code>
-                
+              &lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+
+              &lt;button onclick="desenharRetangulo()"&gt;Desenhar Retângulo&lt;/button&gt;
+
+              &lt;script&gt;
+              function desenharRetangulo() {
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+
+                var x = 10;
+                var y = 0;
+                var width = 150;
+                var height = 75;
+
+                context.fillStyle = "blue";
+                context.fillRect(x, y, width, height);
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <canvas id="myCanvasEx32" width="200" height="100" style="display: none"></canvas>
+
+            <button onclick="exercicio32()" class="btn btn-primary btn-lg">Validar Exercício</button>
           </section>
           <hr class="divider">
           
@@ -1530,10 +1549,31 @@
             </p>
 
             <pre><code>
-                
+              &lt;canvas id="myCanvas" width="200" height="200"&gt;&lt;/canvas&gt;
+
+              &lt;button onclick="desenharCirculo()"&gt;Desenhar Círculo&lt;/button&gt;
+
+              &lt;script&gt;
+              function desenharCirculo() {
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+
+                var x = 100;
+                var y = 100;
+                var radius = 50;
+
+                context.beginPath();
+                context.arc(x, y, radius, 0, 2 * Math.PI);
+                context.fillStyle = "red";
+                context.fill();
+                context.closePath();
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <canvas id="myCanvasEx33" width="200" height="200" style="display: none"></canvas>
+
+            <button onclick="exercicio33()" class="btn btn-primary btn-lg">Validar Exercício</button>
           </section>
           <hr class="divider">
           
