@@ -585,6 +585,29 @@ function exercicio33() {
 
   document.getElementById("myCanvasEx33").style.display = "block";
 }
+
+function exercicio34() {
+  var email = prompt("Digite o endereço de email:");
+
+	var resultado = "<strong>Endereço de email com metade escondida:</strong> <br/>";
+
+  const atIndex = email.indexOf("@");
+  
+  if (atIndex > 1) {
+    const nomeUtilizador = email.substr(0, atIndex);
+    const dominio = email.substr(atIndex);
+    
+    const nomeUtilizadorEscondido = nomeUtilizador.substr(0, nomeUtilizador.length / 2) + "......";
+    resultado += nomeUtilizadorEscondido + dominio;
+  }
+  else{
+    resultado = "<strong>Endereço de email inválido</strong>"
+  }  
+
+  document.getElementById("mensagemEx34").innerHTML = resultado;
+  document.getElementById("mensagemEx34").classList.remove("hidden");
+}
+
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50
