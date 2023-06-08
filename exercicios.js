@@ -468,12 +468,25 @@ function exercicio26() {
 
   var resultado = arrayAExibir + 
                   "<strong>" +
-                  "O maior número do array é: " + menorNumero +
+                  "O menor número do array é: " + menorNumero +
                   "</strong>";
   
   document.getElementById("mensagemEx26").innerHTML = resultado;
   document.getElementById("mensagemEx26").classList.remove("hidden");
 }
 
+function exercicio27() {
+  var distanciaPercorrida = document.getElementById("distanciaEx27").value;
+  var combustivelConsumido = document.getElementById("combustivelEx27").value;
+  
+  var consumoMedio = distanciaPercorrida / combustivelConsumido;
+
+  var resultado = "<strong>" +
+                  "O consumo médio de combustível é: " + consumoMedio.toFixed(2) + " km/l" +
+                  "</strong>";
+
+  document.getElementById("mensagemEx27").innerHTML = resultado;
+  document.getElementById("mensagemEx27").classList.remove("hidden");
+}
 
 //#endregion

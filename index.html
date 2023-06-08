@@ -1290,7 +1290,7 @@
 
                 var resultado = arrayAExibir + 
                                 "&lt;strong&gt;" +
-                                "O maior número do array é: " + maiorNumero +
+                                "O menor número do array é: " + menorNumero +
                                 "&lt;/strong&gt;";
                 
                 document.getElementById("resultado").innerHTML = resultado;
@@ -1311,10 +1311,41 @@
             </p>
 
             <pre><code>
+              &lt;label for="distancia"&gt;Digite a distância percorrida (em km):&lt;/label&gt;
+              &lt;input type="number" id="distancia"&gt;
+
+              &lt;label for="combustivel"&gt;Digite a quantidade de combustível consumida (em litros):&lt;/label&gt;
+              &lt;input type="number" id="combustivel"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="calcularConsumoMedio()"&gt;Calcular consumo médio&lt;/button&gt;
+
+              &lt;script&gt;
+              function calcularConsumoMedio() {
+                var distanciaPercorrida = document.getElementById("distancia").value;
+                var combustivelConsumido = document.getElementById("combustivel").value;
                 
+                var consumoMedio = distanciaPercorrida / combustivelConsumido;
+
+                var resultado = "&lt;strong&gt;" +
+                                "O consumo médio de combustível é: " + consumoMedio.toFixed(2) + " km/l" +
+                                "&lt;/strong&gt;";
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 27</button>
+            <label for="distanciaEx27">Digite a distância percorrida (em km):</label>
+            <input type="number" id="distanciaEx27">
+
+            <label for="combustivelEx27">Digite a quantidade de combustível consumida (em litros):</label>
+            <input type="number" id="combustivelEx27">
+
+            <p id="mensagemEx27" class="hidden"></p>
+
+            <button onclick="exercicio27()" class="btn btn-primary btn-lg">Validar Exercício 27</button>
           </section>
           <hr class="divider">
           
