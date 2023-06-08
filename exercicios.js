@@ -309,4 +309,16 @@ function exercicio19() {
   document.getElementById("mensagemEx19").innerHTML = fraseInvertida;
   document.getElementById("mensagemEx19").classList.remove("hidden");
 }
+
+//converterEurosParaDolares
+function exercicio20() {
+  var taxaCambio = document.getElementById("cambioEx20").value;
+  var valorEmEuros = document.getElementById("euroEx20").value;
+  var valorEmDolares = (valorEmEuros * taxaCambio).toFixed(2);
+
+  var resultado = "<strong>" + valorEmEuros + " EUR = " + valorEmDolares + " USD" + "</strong>";
+  
+  document.getElementById("mensagemEx20").innerHTML = resultado;
+  document.getElementById("mensagemEx20").classList.remove("hidden");
+}
 //#endregion

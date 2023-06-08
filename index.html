@@ -962,17 +962,45 @@
             </p>
 
             <pre><code>
+              &lt;label for="cambio"&gt;Taxa de câmbio:&lt;/label&gt;
+              &lt;input type="number" id="cambio"&gt;
+
+              &lt;label for="euro"&gt;Valor em Euros a ser convertido:&lt;/label&gt;
+              &lt;input type="number" id="euro"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="converterEurosParaDolares()"&gt;Inverter&lt;/button&gt;
+
+              &lt;script&gt;
+                function converterEurosParaDolares() {
+                  var taxaCambio = document.getElementById("cambio").value;
+                  var valorEmEuros = document.getElementById("euro").value;
+                  var valorEmDolares = (valorEmEuros * taxaCambio).toFixed(2);
                 
+                  var resultado = "&lt;strong&gt;" + valorEmEuros + " EUR = " + valorEmDolares + " USD" + "&lt;/strong&gt;";
+                  
+                  document.getElementById("resultado").innerHTML = resultado;
+                  document.getElementById("resultado").classList.remove("hidden");
+                }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 20</button>
+            <label for="cambioEx20">Taxa de câmbio:</label>
+            <input type="number" id="cambioEx20">
+
+            <label for="euroEx20">Valor em Euros a ser convertido:</label>
+            <input type="number" id="euroEx20">
+
+            <p id="mensagemEx20" class="hidden"></p>
+
+            <button onclick="exercicio20()" class="btn btn-primary btn-lg">Validar Exercício 20</button>
           </section>
           <hr class="divider">
         </section>
         <!-- #endregion -->
         
-        <!-- Exercícios 21 a 30
-		    ============================ -->
+        <!-- #region Exercícios 21 a 30 -->
         <section id="exercicios21-30">
           <section id="exercicio21">
             <h2>Exercício 21</h2>
@@ -998,7 +1026,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 22</button>
           </section>
           <hr class="divider">
           
@@ -1012,7 +1040,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 23</button>
           </section>
           <hr class="divider">
           
@@ -1026,7 +1054,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 24</button>
           </section>
           <hr class="divider">
           
@@ -1040,7 +1068,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 25</button>
           </section>
           <hr class="divider">
 
@@ -1054,7 +1082,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 26</button>
           </section>
           <hr class="divider">
           
@@ -1068,7 +1096,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 27</button>
           </section>
           <hr class="divider">
           
@@ -1082,7 +1110,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 28</button>
           </section>
           <hr class="divider">
           
@@ -1096,7 +1124,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 29</button>
           </section>
           <hr class="divider">
           
@@ -1110,10 +1138,12 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 30</button>
           </section>
           <hr class="divider">
         </section>
+
+        <!-- #endregion -->
 
         <!-- Exercícios 31 a 40
 		    ============================ -->
