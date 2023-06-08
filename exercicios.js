@@ -489,4 +489,51 @@ function exercicio27() {
   document.getElementById("mensagemEx27").classList.remove("hidden");
 }
 
+function exercicio28() {
+  var num1 = document.getElementById("num1Ex28").value;
+  var num2 = document.getElementById("num2Ex28").value;
+
+  var maior = Math.max(num1, num2);
+  var menor = Math.min(num1, num2);
+
+  var diferenca = maior - menor;
+
+  var resultado = "<strong>" +
+                  "A diferença entre o maior e o menor valor é: " + diferenca +
+                  "</strong>";
+
+  document.getElementById("mensagemEx28").innerHTML = resultado;
+  document.getElementById("mensagemEx28").classList.remove("hidden");
+}
+
+function exercicio29() {
+  var frequenciaNumeros = [0, 0, 0, 0, 0, 0];
+  var totalLancamentos = 35000;
+
+  for (var i = 0; i < totalLancamentos; i++) {
+    var numero = Math.floor(Math.random() * 6) + 1;
+
+    frequenciaNumeros[numero - 1]++;
+  }
+
+  var resultado = "";
+
+  for (var j = 0; j < frequenciaNumeros.length; j++) {
+    resultado += "<strong>Número " + (j + 1) + ": </strong>" + frequenciaNumeros[j] + "<br/>";
+  }
+
+  document.getElementById("mensagemEx29").innerHTML = resultado;
+  document.getElementById("mensagemEx29").classList.remove("hidden");
+}
+
+function exercicio30() {
+  var input = prompt("Digite uma string:");
+
+	if (!isNaN(input)) {
+	  alert("É um número!");
+	} else {
+	  alert("Erro: não é um número!");
+	}
+}
+
 //#endregion
