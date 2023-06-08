@@ -1009,10 +1009,32 @@
             </p>
 
             <pre><code>
+              &lt;label for="numero"&gt;Digite um número:&lt;/label&gt;
+              &lt;input type="number" id="numero"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="converterParaNegativo()"&gt;Converter&lt;/button&gt;
                 
+              &lt;script&gt;
+                function converterParaNegativo() {
+                  var numero = document.getElementById("numero").value;
+                  var numeroNegativo = -Math.abs(numero);
+                
+                  var resultado = "&lt;strong&gt;" + "O número " + numero + " convertido em negativo é: " + numeroNegativo + "&lt;/strong&gt;";
+                  
+                  document.getElementById("resultado").innerHTML = resultado;
+                  document.getElementById("resultado").classList.remove("hidden");
+                }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 21</button>
+            <label for="numEx21">Digite um número:</label>
+            <input type="number" id="numEx21">
+
+            <p id="mensagemEx21" class="hidden"></p>
+
+            <button onclick="exercicio21()" class="btn btn-primary btn-lg">Validar Exercício 21</button>
           </section>
           <hr class="divider">
           

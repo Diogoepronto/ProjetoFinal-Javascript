@@ -310,15 +310,27 @@ function exercicio19() {
   document.getElementById("mensagemEx19").classList.remove("hidden");
 }
 
-//converterEurosParaDolares
 function exercicio20() {
   var taxaCambio = document.getElementById("cambioEx20").value;
   var valorEmEuros = document.getElementById("euroEx20").value;
   var valorEmDolares = (valorEmEuros * taxaCambio).toFixed(2);
-
+  
   var resultado = "<strong>" + valorEmEuros + " EUR = " + valorEmDolares + " USD" + "</strong>";
   
   document.getElementById("mensagemEx20").innerHTML = resultado;
   document.getElementById("mensagemEx20").classList.remove("hidden");
 }
+//#endregion
+
+//#region EXERCÍCIO 21 ~ 30
+function exercicio21() {
+	var numero = document.getElementById("numEx21").value;
+	var numeroNegativo = -Math.abs(numero);
+
+  var resultado = "<strong>" + "O número " + numero + " convertido em negativo é: " + numeroNegativo + "</strong>";
+  
+  document.getElementById("mensagemEx21").innerHTML = resultado;
+  document.getElementById("mensagemEx21").classList.remove("hidden");
+}
+
 //#endregion
