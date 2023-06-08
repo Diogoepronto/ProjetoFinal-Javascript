@@ -1671,13 +1671,46 @@
           <section id="exercicio36">
             <h2>Exercício 36</h2>
             <p class="lead">
-              Crie um programa que mostre o seguinte padrão utilizando ciclos encadeados. O número de linhas deverá ser introduzido pelo utilizador (Exemplo para 5 linhas).
+              Crie um programa que mostre o seguinte padrão utilizando ciclos encadeados. O número de linhas deverá ser introduzido pelo utilizador (Exemplo para 5 linhas).<br/><br/>
+              * <br/>
+              * *  <br/>
+              * * *  <br/>
+              * * * *  <br/>
+              * * * * * <br/>
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="gerarPadrao()"&gt;Gerar Padrão&lt;/button&gt;
+
+              &lt;script&gt;
+              function gerarPadrao() {
+                var numLinhas = prompt("Digite o número de linhas:");
+                numLinhas = parseInt(numLinhas);
+
+                var resultado = "";
+
+                for (var i = 1; i &lt;= numLinhas; i++) {
+                  var linha = "";
+
+                  for (var j = 1; j &lt;= i; j++) {
+                    linha += "* ";
+                  }
+
+                  linha += "&lt;br/&gt;";
+
+                  resultado += linha;
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 36</button>
+            <p id="mensagemEx36" class="hidden"></p>
+
+            <button onclick="exercicio36()" class="btn btn-primary btn-lg">Validar Exercício 36</button>
           </section>
           <hr class="divider">
           

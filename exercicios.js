@@ -622,6 +622,28 @@ function exercicio35() {
   document.getElementById("mensagemEx35").classList.remove("hidden");
 }
 
+function exercicio36() {
+  var numLinhas = prompt("Digite o número de linhas:");
+	numLinhas = parseInt(numLinhas);
+
+  var resultado = "";
+
+	for (var i = 1; i <= numLinhas; i++) {
+	  var linha = "";
+
+	  for (var j = 1; j <= i; j++) {
+		  linha += "* ";
+	  }
+
+    linha += "<br/>";
+
+    resultado += linha;
+	}
+
+  document.getElementById("mensagemEx36").innerHTML = resultado;
+  document.getElementById("mensagemEx36").classList.remove("hidden");
+}
+
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50
