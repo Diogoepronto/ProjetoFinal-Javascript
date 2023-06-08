@@ -1721,10 +1721,33 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="somarNumeros()"&gt;Somar Números&lt;/button&gt;
+
+              &lt;script&gt;
+              function somarNumeros() {
+                var numero = prompt("Digite um número:");
+                numero = parseInt(numero);
+
+                var soma = 0;
+
+                for (var i = 1; i &lt;= numero; i++) {
+                  soma += i;
+                }
+
+                soma = soma.toLocaleString(undefined);
+
+                var resultado = "A soma dos números de 1 até " + numero + " é: " + soma;
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 37</button>
+            <p id="mensagemEx37" class="hidden"></p>
+
+            <button onclick="exercicio37()" class="btn btn-primary btn-lg">Validar Exercício 37</button>
           </section>
           <hr class="divider">
           
@@ -1735,10 +1758,28 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="multiplosDeTres()"&gt;Mostrar múltiplos de três&lt;/button&gt;
+
+              &lt;script&gt;
+              function multiplosDeTres() {
+                var resultado = "Todos os múltiplos de 3 entre 1 e 100: &lt;br/&gt;";
+
+                for (var i = 1; i &lt;= 100; i++) {
+                  if (i % 3 === 0) {
+                    resultado += i == 99 ? i : i + ", ";
+                  }
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 38</button>
+            <p id="mensagemEx38" class="hidden"></p>
+
+            <button onclick="exercicio38()" class="btn btn-primary btn-lg">Validar Exercício 38</button>
           </section>
           <hr class="divider">
           

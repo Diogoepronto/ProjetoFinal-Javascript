@@ -644,6 +644,36 @@ function exercicio36() {
   document.getElementById("mensagemEx36").classList.remove("hidden");
 }
 
+function exercicio37() {
+  var numero = prompt("Digite um número:");
+	numero = parseInt(numero);
+
+	var soma = 0;
+
+	for (var i = 1; i <= numero; i++) {
+	  soma += i;
+	}
+
+  soma = soma.toLocaleString(undefined);
+
+  var resultado = "<strong>A soma dos números de 1 até " + numero + " é: " + soma + "</strong>";
+
+	document.getElementById("mensagemEx37").innerHTML = resultado;
+  document.getElementById("mensagemEx37").classList.remove("hidden");
+}
+
+function exercicio38() {
+  var resultado = "<strong>Todos os múltiplos de 3 entre 1 e 100:</strong> <br/>";
+
+  for (var i = 1; i <= 100; i++) {
+    if (i % 3 === 0) {
+      resultado += i == 99 ? i : i + ", ";
+    }
+  }
+
+  document.getElementById("mensagemEx38").innerHTML = resultado;
+  document.getElementById("mensagemEx38").classList.remove("hidden");
+}
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50
