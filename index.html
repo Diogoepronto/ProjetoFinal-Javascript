@@ -1136,10 +1136,35 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="qtdChar"&gt;Qual o tamanho da senha?&lt;/label&gt;
+              &lt;input type="number" id="qtdChar"&gt;
+
+              &lt;p id="resultado" class="hidden"&gt;&lt;/p&gt;
+
+              &lt;button onclick="gerarSenha()"&gt;Gerar Senha&lt;/button&gt;
+
+              &lt;script&gt;
+                function gerarSenha() {
+                  var quantidadeCaracteres = document.getElementById("qtdChar").value;
+                  var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+                  var senha = '';
+                  
+                  for (var i = 0; i &lt; quantidadeCaracteres; i++) {
+                    var indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+                    senha += caracteres.charAt(indiceAleatorio);
+                  }
+                  
+                  document.getElementById("resultado").innerHTML = "&lt;strong&gt;Senha gerada: &lt;/strong&gt;" + senha;
+                }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 24</button>
+            <label for="qtdCharEx24">Qual o tamanho da senha?</label>
+            <input type="number" id="qtdCharEx24">
+
+            <p id="mensagemEx24" class="hidden"></p>
+
+            <button onclick="exercicio24()" class="btn btn-primary btn-lg">Validar Exercício 24</button>
           </section>
           <hr class="divider">
           

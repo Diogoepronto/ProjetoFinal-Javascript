@@ -363,6 +363,18 @@ function exercicio23() {
   document.getElementById("mensagemEx23").classList.remove("hidden");
 }
 
-
+function exercicio24() {
+  var quantidadeCaracteres = document.getElementById("qtdCharEx24").value;
+  var caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  var senha = '';
+  
+  for (var i = 0; i < quantidadeCaracteres; i++) {
+    var indiceAleatorio = Math.floor(Math.random() * caracteres.length);
+    senha += caracteres.charAt(indiceAleatorio);
+  }
+  
+  document.getElementById("mensagemEx24").innerHTML = "<strong>Senha gerada: </strong>" + senha;
+  document.getElementById("mensagemEx24").classList.remove("hidden");
+}
 
 //#endregion
