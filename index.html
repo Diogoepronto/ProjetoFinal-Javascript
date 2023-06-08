@@ -76,7 +76,7 @@
 		
 		    <!-- Logo --> 
         <a class="logo ml-md-3" href="index.html" title="Trabalho Final de Javascript"> <img src="assets/images/LogoHorizontal.png" alt="Logo Diogo Alves"/> </a> 
-		    <span class="text-2 ml-2">v0.5</span>
+		    <span class="text-2 ml-2">v0.7</span>
         <!-- Logo End -->
         
 		    <div id="header-nav" class="collapse navbar-collapse justify-content-end"></div>
@@ -1818,14 +1818,48 @@
           <section id="exercicio40">
             <h2>Exercício 40</h2>
             <p class="lead">
-              Crie um programa que leia a hora de entrada e saída de um funcionário sabendo que a hora de entrada será sempre inferior a data de saída caso contrário deverá ser exibido uma mensagem de erro.
+              Crie um programa que leia a hora de entrada e saída de um funcionário sabendo que a hora de entrada será sempre inferior à hora de saída, caso contrário deverá ser exibida uma mensagem de erro.
             </p>
 
             <pre><code>
-                
+              &lt;label for="horarioEntrada"&gt;Horário de entrada:&lt;/label&gt;
+              &lt;input type="time" id="horarioEntrada"&gt;
+
+              &lt;label for="horarioSaida"&gt;Horário de saída:&lt;/label&gt;
+              &lt;input type="time" id="horarioSaida"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="validarHorario()"&gt;Validar horário&lt;/button&gt;
+
+              &lt;script&gt;
+              function validarHorario() {
+                var horaEntrada = document.getElementById("horarioEntrada").value;
+                var horaSaida = document.getElementById("horarioSaida").value;
+
+                var resultado = "";
+
+                if (horaEntrada &lt; horaSaida){
+                  resultado = "Hora de entrada: " + horaEntrada + "&lt;br/&gt;" +
+                              "Hora de saída: " + horaSaida;
+                } else {
+                  resultado = "Horário inválido!";
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 40</button>
+            <label for="horarioEntradaEx40">Horário de entrada:</label>
+            <input type="time" id="horarioEntradaEx40">
+
+            <label for="horarioSaidaEx40">Horário de saída:</label>
+            <input type="time" id="horarioSaidaEx40">
+
+            <p id="mensagemEx40" class="hidden"></p>
+
+            <button onclick="exercicio40()" class="btn btn-primary btn-lg">Validar Exercício 40</button>
           </section>
           <hr class="divider">
         </section>

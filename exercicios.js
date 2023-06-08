@@ -677,9 +677,26 @@ function exercicio38() {
 
 function exercicio39() {
   var data = new Date(document.getElementById("dataEx39").value);
-
+  
   document.getElementById("mensagemEx39").innerHTML = "Mês por extenso: <strong>" + data.toLocaleString('default', { month: 'long' }) + "</strong>";
   document.getElementById("mensagemEx39").classList.remove("hidden");
+}
+
+function exercicio40() {
+  var horaEntrada = document.getElementById("horarioEntradaEx40").value;
+  var horaSaida = document.getElementById("horarioSaidaEx40").value;
+
+  var resultado = "";
+
+  if (horaEntrada < horaSaida){
+    resultado = "<strong>Hora de entrada:</strong> " + horaEntrada + "<br/>" +
+                "<strong>Hora de saída:</strong> " + horaSaida;
+  } else {
+    resultado = "<strong style='color: red;'>Horário inválido!</strong>";
+  }
+
+  document.getElementById("mensagemEx40").innerHTML = resultado;
+  document.getElementById("mensagemEx40").classList.remove("hidden");
 }
 //#endregion
 
