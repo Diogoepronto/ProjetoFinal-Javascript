@@ -1640,12 +1640,31 @@
                 <li>Todos os nomes separados por espaços (<code>split</code>):</li>
               </ul>
             </p>
-
+            
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+    
+              &lt;button onclick="manipularString()"&gt;Esconder Email&lt;/button&gt;
+    
+              &lt;script&gt;
+              function manipularString() {
+                var nome = prompt("Digite o seu nome:");
+    
+                var resultado = "Nome completo: " + nome + "&lt;br/&gt;" +
+                                "Última letra do nome: " + nome[nome.length - 1] + "&lt;br/&gt;" +
+                                "Da primeira letra até a terceira: " + nome.substring(0, 3) + "&lt;br/&gt;" +
+                                "Todas as letras menos a primeira: " + nome.substring(1) + "&lt;br/&gt;" +
+                                "Duas últimas letras: " + nome.substring(nome.length - 2) + "&lt;br/&gt;" +
+                                "Nomes separados por espaços: " + nome.split("").join(" ");
+    
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                              
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 35</button>
+            <p id="mensagemEx35" class="hidden"></p>
+
+            <button onclick="exercicio35()" class="btn btn-primary btn-lg">Validar Exercício 35</button>
           </section>
           <hr class="divider">
           
@@ -1656,7 +1675,6 @@
             </p>
 
             <pre><code>
-                
             </code></pre>
 
             <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 36</button>

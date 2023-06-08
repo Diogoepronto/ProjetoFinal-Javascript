@@ -608,6 +608,20 @@ function exercicio34() {
   document.getElementById("mensagemEx34").classList.remove("hidden");
 }
 
+function exercicio35() {
+  var nome = prompt("Digite o seu nome:");
+
+  var resultado = "<strong>Nome completo:</strong> " + nome + "<br/>" +
+                  "<strong>Última letra do nome:</strong> " + nome[nome.length - 1] + "<br/>" +
+                  "<strong>Da primeira letra até a terceira:</strong> " + nome.substring(0, 3) + "<br/>" +
+                  "<strong>Todas as letras menos a primeira:</strong> " + nome.substring(1) + "<br/>" +
+                  "<strong>Duas últimas letras:</strong> " + nome.substring(nome.length - 2) + "<br/>" +
+                  "<strong>Nomes separados por espaços:</strong> " + nome.split("").join(" ");
+
+  document.getElementById("mensagemEx35").innerHTML = resultado;
+  document.getElementById("mensagemEx35").classList.remove("hidden");
+}
+
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50
