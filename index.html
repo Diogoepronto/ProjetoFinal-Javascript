@@ -9,8 +9,7 @@
 <meta name="description" content="Trabalho final da UFCD 5414 - Programação Web (Client side)">
 <meta name="author" content="harnishdesign.net">
 
-<!-- Stylesheet
-============================== -->
+<!-- #region Stylesheet -->
 <!-- Bootstrap -->
 <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap/css/bootstrap.min.css" />
 <!-- Font Awesome Icon -->
@@ -44,12 +43,12 @@
   }
 
 </style>
-
+<!-- #endregion -->
 </head>
 
 <body data-spy="scroll" data-target=".idocs-navigation" data-offset="125">
 
-<!-- Preloader -->
+<!-- #region Preloader -->
 <div class="preloader">
   <div class="lds-ellipsis">
     <div></div>
@@ -58,14 +57,12 @@
     <div></div>
   </div>
 </div>
-<!-- Preloader End --> 
+<!-- #endregion --> 
 
-<!-- Document Wrapper   
-=============================== -->
+<!-- #region Document Wrapper -->
 <div id="main-wrapper"> 
   
-  <!-- Header
-  ============================ -->
+  <!-- #region Header -->
   <header id="header" class="sticky-top"> 
     <!-- Navbar -->
     <nav class="primary-menu navbar navbar-expand-lg navbar-dropdown-dark">
@@ -84,15 +81,13 @@
     </nav>
     <!-- Navbar End --> 
   </header>
-  <!-- Header End --> 
+  <!-- #endregion -->
   
-  <!-- Content
-  ============================ -->
+  <!-- #region Content -->
   <div id="content" role="main">
     
-	<!-- Sidebar Navigation
-	============================ -->
-	<div class="idocs-navigation bg-dark docs-navigation-dark">
+	  <!-- #region Sidebar Navigation -->
+	  <div class="idocs-navigation bg-dark docs-navigation-dark">
       <ul class="nav flex-column ">
         <li class="nav-item"><a class="nav-link active" href="#apresentacao">Apresentação</a>
           <ul class="nav flex-column">
@@ -184,14 +179,13 @@
         </li>
       </ul>
     </div>
+    <!-- #endregion -->
     
-    <!-- Docs Content
-	  ============================ -->
+    <!-- #region Docs Content -->
     <div class="idocs-content">
       <div class="container"> 
         
-        <!-- Getting Started
-		    ============================ -->
+        <!-- #region Apresentação -->
         <section id="apresentacao">
         <h1>Trabalho Final</h1>
         <h2>Apresentação</h2>
@@ -212,6 +206,7 @@
         </section>
         
 		    <hr class="divider">
+        <!-- #endregion -->
 		
         <!-- #region Exercícios 1 a 10 -->
         <section id="exercicios1-10">
@@ -1465,8 +1460,7 @@
 
         <!-- #endregion -->
 
-        <!-- Exercícios 31 a 40
-		    ============================ -->
+        <!-- #region Exercícios 31 a 40 -->
         <section id="exercicios31-40">
           <section id="exercicio31">
             <h2>Exercício 31</h2>
@@ -1475,10 +1469,43 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="senha"&gt;Digite a senha:&lt;/label&gt;
+              &lt;input type="password" id="senha"&gt;
+
+              &lt;label for="confirmaSenha"&gt;Confirme a senha:&lt;/label&gt;
+              &lt;input type="password" id="confirmaSenha"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="verificarSenha()"&gt;Verificar string&lt;/button&gt;
+
+              &lt;script&gt;
+              function verificarSenha() {
+                var senha = document.getElementById("senha").value;
+                var confirmacaoSenha = document.getElementById("confirmaSenha").value;
+
+                var resultado = "";
+
+                if (senha === confirmacaoSenha) {
+                  resultado = "&lt;strong style='color: green;'&gt;Senhas coincidem!&lt;/span&gt;";
+                } else {
+                  resultado = "&lt;strong style='color: red;'&gt;Erro: as senhas não coincidem!&lt;/span&gt;";
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <label for="senhaEx31">Digite a senha:</label>
+            <input type="password" id="senhaEx31">
+
+            <label for="confirmaSenhaEx31">Confirme a senha:</label>
+            <input type="password" id="confirmaSenhaEx31">
+
+            <p id="mensagemEx31" class="hidden"></p>
+
+            <button onclick="exercicio31()" class="btn btn-primary btn-lg">Validar Exercício 31</button>
           </section>
           <hr class="divider">
           
@@ -1619,9 +1646,9 @@
           </section>
           <hr class="divider">
         </section>
+        <!-- #endregion -->
 
-        <!-- Exercícios 41 a 50
-		    ============================ -->
+        <!-- #region Exercícios 41 a 50 -->
         <section id="exercicios41-50">
           <section id="exercicio41">
             <h2>Exercício 41</h2>
@@ -1771,9 +1798,9 @@
           </section>
           <hr class="divider">
         </section>
+        <!-- #endregion -->
         
-        <!-- Exercícios 51 a 60
-		    ============================ -->
+        <!-- #region Exercícios 51 a 60 -->
         <section id="exercicios51-60">
           <section id="exercicio51">
             <h2>Exercício 51</h2>
@@ -1920,14 +1947,15 @@
           </section>
           <hr class="divider">
         </section>
+        <!-- #endregion -->
         
       </div>
-    </div>	
+    </div>
+    <!-- #endregion -->
   </div>
-  <!-- Content end --> 
+  <!-- #endregion --> 
   
-  <!-- Footer
-  ============================ -->
+  <!-- #region Footer -->
   <footer id="footer" class="section bg-dark footer-text-light">
     <div class="container">
       <ul class="social-icons social-icons-lg social-icons-muted justify-content-center mb-3">
@@ -1940,16 +1968,15 @@
 	  <p class="text-2 text-center mb-0">Design &amp; Develop by <a class="btn-link" target="_blank" href="http://www.harnishdesign.net/">HarnishDesign</a>.</p>
     </div>
   </footer>
-  <!-- Footer end -->
+  <!-- #endregion -->
   
 </div>
-<!-- Document Wrapper end --> 
+<!-- #endregion --> 
 
 <!-- Back To Top --> 
 <a id="back-to-top" data-toggle="tooltip" title="Back to Top" href="javascript:void(0)"><i class="fa fa-chevron-up"></i></a> 
 
-<!-- JavaScript
-============================ -->
+<!-- #region JavaScript -->
 <script src="assets/vendor/jquery/jquery.min.js"></script> 
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
 <!-- Highlight JS -->
@@ -1960,7 +1987,8 @@
 <script src="assets/vendor/magnific-popup/jquery.magnific-popup.min.js"></script> 
 <!-- Custom Script -->
 <script src="assets/js/theme.js"></script>
-
+<!-- Resolução dos exercício -->
 <script src="exercicios.js"></script>
+<!-- #endregion -->
 </body>
 </html>

@@ -535,5 +535,30 @@ function exercicio30() {
 	  alert("Erro: não é um número!");
 	}
 }
+//#endregion
+
+//#region EXERCÍCIO 31 ~ 40
+function exercicio31() {
+  var senha = document.getElementById("senhaEx31").value;
+	var confirmacaoSenha = document.getElementById("confirmaSenhaEx31").value;
+
+  var resultado = "";
+
+	if (senha === confirmacaoSenha) {
+	  resultado = "<strong style='color: green;'>Senhas coincidem!</span>";
+	} else {
+	  resultado = "<strong style='color: red;'>Erro: as senhas não coincidem!</span>";
+	}
+
+  document.getElementById("mensagemEx31").innerHTML = resultado;
+  document.getElementById("mensagemEx31").classList.remove("hidden");
+}
+//#endregion
+
+//#region EXERCÍCIO 41 ~ 50
+
+//#endregion
+
+//#region EXERCÍCIO 51 ~ 60
 
 //#endregion
