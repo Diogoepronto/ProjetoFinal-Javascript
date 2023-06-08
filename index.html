@@ -1908,10 +1908,40 @@
             </p>
 
             <pre><code>
+              &lt;label for="dataNascimento"&gt;Selecione sua data de nascimento:&lt;/label&gt;
+              &lt;input type="date" id="dataNascimento"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="calcularIdade()"&gt;Calcular Idade&lt;/button&gt;
+
+              &lt;script&gt;
+              function calcularIdade() {
+                var dataAtual = new Date();
+                var dataNascimento = new Date(document.getElementById("dataNascimento").value);
                 
+                var idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+                
+                var diaAtual = dataAtual.getDate();
+                var diaNascimento = dataNascimento.getDate();
+                var mesAtual = dataAtual.getMonth();
+                var mesNascimento = dataNascimento.getMonth();
+                  
+                if (mesAtual &lt; mesNascimento || (mesAtual === mesNascimento && diaAtual &lt; diaNascimento)) {
+                  idade--;
+                }
+
+                document.getElementById("resultado").innerHTML = "Idade: " + idade;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 42</button>
+            <label for="dataNascimentoEx42">Selecione sua data de nascimento:</label>
+            <input type="date" id="dataNascimentoEx42">
+
+            <p id="mensagemEx42" class="hidden"></p>
+
+            <button onclick="exercicio42()" class="btn btn-primary btn-lg">Validar Exercício 42</button>
           </section>
           <hr class="divider">
           

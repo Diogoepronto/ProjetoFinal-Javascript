@@ -709,6 +709,25 @@ function exercicio41() {
   document.getElementById("mensagemEx41").innerHTML = resultado;
   document.getElementById("mensagemEx41").classList.remove("hidden");
 }
+
+function exercicio42() {
+  var dataAtual = new Date();
+  var dataNascimento = new Date(document.getElementById("dataNascimentoEx42").value);
+  
+  var idade = dataAtual.getFullYear() - dataNascimento.getFullYear();
+  
+  var diaAtual = dataAtual.getDate();
+  var diaNascimento = dataNascimento.getDate();
+  var mesAtual = dataAtual.getMonth();
+  var mesNascimento = dataNascimento.getMonth();
+    
+  if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
+    idade--;
+  }
+
+  document.getElementById("mensagemEx42").innerHTML = "<strong>Idade:</strong> " + idade;
+  document.getElementById("mensagemEx42").classList.remove("hidden");
+}
 //#endregion
 
 //#region EXERCÍCIO 51 ~ 60
