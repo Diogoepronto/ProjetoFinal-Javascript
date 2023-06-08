@@ -674,6 +674,13 @@ function exercicio38() {
   document.getElementById("mensagemEx38").innerHTML = resultado;
   document.getElementById("mensagemEx38").classList.remove("hidden");
 }
+
+function exercicio39() {
+  var data = new Date(document.getElementById("dataEx39").value);
+
+  document.getElementById("mensagemEx39").innerHTML = "Mês por extenso: <strong>" + data.toLocaleString('default', { month: 'long' }) + "</strong>";
+  document.getElementById("mensagemEx39").classList.remove("hidden");
+}
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50

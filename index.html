@@ -1786,14 +1786,32 @@
           <section id="exercicio39">
             <h2>Exercício 39</h2>
             <p class="lead">
-              Crie um programa que leia uma data e mostre o mês por extenso
+              Crie um programa que leia uma data e mostre o mês por extenso.
             </p>
 
             <pre><code>
-                
+              &lt;label for="data"&gt;Selecione uma data:&lt;/label&gt;
+              &lt;input type="date" id="data"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="mesPorExtenso()"&gt;Mostrar mês por extenso&lt;/button&gt;
+
+              &lt;script&gt;
+              function mesPorExtenso() {
+                var data = new Date(document.getElementById("data").value);
+
+                document.getElementById("resultado").innerHTML = "Mês por extenso: " + data.toLocaleString('default', { month: 'long' });
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 39</button>
+            <label for="dataEx39">Selecione uma data:</label>
+            <input type="date" id="dataEx39">
+
+            <p id="mensagemEx39" class="hidden"></p>
+
+            <button onclick="exercicio39()" class="btn btn-primary btn-lg">Validar Exercício 39</button>
           </section>
           <hr class="divider">
           
