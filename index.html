@@ -1874,10 +1874,30 @@
             </p>
 
             <pre><code>
+              &lt;label for="data"&gt;Selecione uma data:&lt;/label&gt;
+              &lt;input type="date" id="data"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="exibirDiaDaSemana()"&gt;Exibir dia da semana&lt;/button&gt;
+
+              &lt;script&gt;
+              function exibirDiaDaSemana() {
+                var data = new Date(document.getElementById("data").value);
                 
+                var resultado = "Dia da semana: " + data.toLocaleString('default', { weekday: 'long' });
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <label for="dataEx41">Selecione uma data:</label>
+            <input type="date" id="dataEx41">
+
+            <p id="mensagemEx41" class="hidden"></p>
+
+            <button onclick="exercicio41()" class="btn btn-primary btn-lg">Validar Exercício 41</button>
           </section>
           <hr class="divider">
           
@@ -1891,7 +1911,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 42</button>
           </section>
           <hr class="divider">
           
@@ -1905,7 +1925,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 43</button>
           </section>
           <hr class="divider">
           
@@ -1919,7 +1939,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 44</button>
           </section>
           <hr class="divider">
           
@@ -1933,7 +1953,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 45</button>
           </section>
           <hr class="divider">
         
@@ -1947,7 +1967,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 46</button>
           </section>
           <hr class="divider">
           
@@ -1961,7 +1981,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 47</button>
           </section>
           <hr class="divider">
           
@@ -1977,7 +1997,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 48</button>
           </section>
           <hr class="divider">
           
@@ -1997,7 +2017,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 49</button>
           </section>
           <hr class="divider">
           
@@ -2011,7 +2031,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 50</button>
           </section>
           <hr class="divider">
         </section>

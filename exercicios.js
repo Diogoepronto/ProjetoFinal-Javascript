@@ -701,7 +701,14 @@ function exercicio40() {
 //#endregion
 
 //#region EXERCÍCIO 41 ~ 50
+function exercicio41() {
+  var data = new Date(document.getElementById("dataEx41").value);
+  
+  var resultado = "Dia da semana: <strong>" + data.toLocaleString('default', { weekday: 'long' }) + "</strong>";
 
+  document.getElementById("mensagemEx41").innerHTML = resultado;
+  document.getElementById("mensagemEx41").classList.remove("hidden");
+}
 //#endregion
 
 //#region EXERCÍCIO 51 ~ 60
