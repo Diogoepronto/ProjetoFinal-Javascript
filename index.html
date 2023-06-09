@@ -1952,10 +1952,51 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="concursoPrecoCerto()"&gt;Iniciar concurso&lt;/button&gt;
+
+              &lt;script&gt;
+              function concursoPrecoCerto(){
+                var valorArtigo = Math.floor(Math.random() *  1000);
+                var numConcorrentes = 3;
+                var palpitesConcorrentes = [];
+                var proximidadePalpites = [];
+
+                for (var i = 0; i &lt; numConcorrentes; i++){
+                  palpitesConcorrentes.push(prompt(`Jogador ${i+1} \nDê o seu palpite:`));
+                }
+
+                for (var i = 0; i &lt; numConcorrentes; i++) {
+                  if (palpitesConcorrentes[i] &lt;= valorArtigo) {
+                    proximidadePalpites[i] = Math.abs(valorArtigo - palpitesConcorrentes[i]);
+                  } else {
+                    proximidadePalpites[i] = null;
+                  }
+                }
+
+                var valorMaisProximo = Math.min(...proximidadePalpites);
+                var ganhador = proximidadePalpites.indexOf(valorMaisProximo);
+
+                var resultado = "";  
+
+                if (ganhador === -1){
+                  resultado = "Não houve ganhadores";
+                } else {
+                  resultado = "Valor do artigo: " + valorArtigo + "&lt;br/&gt;" +
+                              "Ganhador: Concorrente" + (ganhador + 1) + "&lt;br/&gt;" +
+                              "Palpite: " + palpitesConcorrentes[ganhador] + "&lt;br/&gt;" +
+                              "Distância para o valor do artigo: " + proximidadePalpites[ganhador];
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 43</button>
+            <p id="mensagemEx43" class="hidden"></p>
+
+            <button onclick="exercicio43()" class="btn btn-primary btn-lg">Validar Exercício 43</button>
           </section>
           <hr class="divider">
           

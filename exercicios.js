@@ -728,6 +728,44 @@ function exercicio42() {
   document.getElementById("mensagemEx42").innerHTML = "<strong>Idade:</strong> " + idade;
   document.getElementById("mensagemEx42").classList.remove("hidden");
 }
+
+function exercicio43(){
+  var valorArtigo = Math.floor(Math.random() *  1000);
+  var numConcorrentes = 3;
+  var palpitesConcorrentes = [];
+  var proximidadePalpites = [];
+
+  for (var i = 0; i < numConcorrentes; i++){
+    palpitesConcorrentes.push(prompt(`Jogador ${i+1} \nDê o seu palpite:`));
+  }
+
+  for (var i = 0; i < numConcorrentes; i++) {
+    if (palpitesConcorrentes[i] <= valorArtigo) {
+      proximidadePalpites[i] = Math.abs(valorArtigo - palpitesConcorrentes[i]);
+    } else {
+      proximidadePalpites[i] = null;
+    }
+  }
+
+  var valorMaisProximo = Math.min(...proximidadePalpites);
+  var ganhador = proximidadePalpites.indexOf(valorMaisProximo);
+
+  var resultado = "";  
+
+  if (ganhador === -1){
+    resultado = "Não houve ganhadores";
+  } else {
+    resultado = "Valor do artigo: " + valorArtigo + "<br/>" +
+                "Ganhador: Concorrente " + (ganhador + 1) + "<br/>" +
+                "Palpite: " + palpitesConcorrentes[ganhador] + "<br/>" +
+                "Distância para o valor do artigo: " + proximidadePalpites[ganhador];
+  }
+
+  document.getElementById("mensagemEx43").innerHTML = resultado;
+  document.getElementById("mensagemEx43").classList.remove("hidden");
+}
+
+
 //#endregion
 
 //#region EXERCÍCIO 51 ~ 60
