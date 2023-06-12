@@ -1147,7 +1147,6 @@ function exercicio58() {
   for (var i = 0; i < arrayOrdenado.length - 1; i++) {
     for (var j = 0; j < arrayOrdenado.length - 1 - i; j++) {
       if (arrayOrdenado[j] > arrayOrdenado[j + 1]) {
-        // Trocar os elementos de posição
         var temp = arrayOrdenado[j];
         arrayOrdenado[j] = arrayOrdenado[j + 1];
         arrayOrdenado[j + 1] = temp;
@@ -1218,5 +1217,9 @@ function exercicio60() {
   document.getElementById("mensagemEx60").innerHTML = resultado;
   document.getElementById("mensagemEx60").classList.remove("hidden");
 }
+
+//#endregion
+
+//#region JOGO DE APOSTAS
 
 //#endregion
