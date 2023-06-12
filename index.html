@@ -2459,8 +2459,30 @@
             </p>
 
             <pre><code>
+              &lt;label for="decimal"&gt;Digite um número decimal:&lt;/label&gt;
+              &lt;input type="number" id="decimal"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="decimalParaBinario()"&gt;Converter para binário&lt;/button&gt;
+
+              &lt;script&gt;
+              function decimalParaBinario() {
+                var numDecimal = parseFloat(document.getElementById("decimal").value);
+                var numBinario = numDecimal.toString(2);
                 
+                var resultado = "&lt;strong&gt;Decimal:&lt;/strong&gt; " + numDecimal + "&lt;br/&gt;" +
+                                "&lt;strong&gt;Binário:&lt;/strong&gt; " + numBinario;
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
+
+            <label for="decimalEx52">Digite um número decimal:</label>
+            <input type="number" id="decimalEx52">
+
+            <p id="mensagemEx52" class="hidden"></p>
 
             <button onclick="exercicio52()" class="btn btn-primary btn-lg">Validar Exercício 52</button>
           </section>
@@ -2474,7 +2496,21 @@
             </p>
 
             <pre><code>
-                
+              &lt;button onclick="alterarBackground()"&gt;Alterar background&lt;/button&gt;
+
+              &lt;script&gt;
+              function alterarBackground() {
+                var letrasHex = '0123456789ABCDEF';
+                var cor = '#';
+
+                for (var i = 0; i &lt; 6; i++) {
+                  var indice = Math.floor(Math.random() * 16);
+                  cor += letrasHex[indice];
+                }
+
+                document.body.style.background = cor;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
             <button onclick="exercicio53()" class="btn btn-primary btn-lg">Validar Exercício 53</button>

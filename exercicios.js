@@ -1019,6 +1019,29 @@ function exercicio51() {
 
   document.getElementById("mensagemEx51").innerHTML = "<strong>" + textoSemEspeciais + "</strong>";
   document.getElementById("mensagemEx51").classList.remove("hidden");
-}  
+}
+
+function exercicio52() {
+	var numDecimal = parseFloat(document.getElementById("decimalEx52").value);
+  var numBinario = numDecimal.toString(2);
+  
+  var resultado = "<strong>Decimal:</strong> " + numDecimal + "<br/>" +
+                  "<strong>Binário:</strong> " + numBinario;
+
+  document.getElementById("mensagemEx52").innerHTML = resultado;
+  document.getElementById("mensagemEx52").classList.remove("hidden");
+}
+
+function exercicio53() {
+  var letrasHex = '0123456789ABCDEF';
+  var cor = '#';
+
+  for (var i = 0; i < 6; i++) {
+    var indice = Math.floor(Math.random() * 16);
+    cor += letrasHex[indice];
+  }
+
+  document.getElementById("main-wrapper").style.background = cor;
+}
 
 //#endregion
