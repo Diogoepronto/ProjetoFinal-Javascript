@@ -1050,4 +1050,77 @@ function exercicio54() {
   paragrafo.style.background = cor;
 }
 
+function exercicio55() {
+  var linhas = parseInt(prompt("Digite o número de linhas da tabela:"));
+  var colunas = parseInt(prompt("Digite o número de colunas da tabela:"));
+
+  if (isNaN(linhas) || isNaN(colunas) || linhas < 0 || colunas < 0){
+    document.getElementById('mensagemEx55').innerHTML = "<strong style='color:red;'>Valor inválido.<br/>" +
+                                                        "Por favor, digite um número maior que zero.</strong>";
+    return;
+  }
+  
+  var tabela = document.createElement("table");
+  var tBody = document.createElement("tbody");
+  tabela.appendChild(tBody);
+
+  for (var i = 0; i < linhas; i++) {
+    var linha = document.createElement("tr");
+  
+    for (var j = 0; j < colunas; j++) {
+      var coluna = document.createElement("td");
+      coluna.textContent = "Linha " + (i + 1) + ", Coluna " + (j + 1);
+      linha.appendChild(coluna);
+    }
+  
+  tBody.appendChild(linha);
+  }
+
+  tabela.classList.add("table", "table-hover");
+  
+  document.getElementById('mensagemEx55').innerHTML = "";
+  document.getElementById('mensagemEx55').appendChild(tabela);
+}
+
+//---Exercício 56
+
+function gerarTabelaEx56() {
+  var tabela = document.createElement("table");
+  var tBody = document.createElement("tbody");
+  tabela.appendChild(tBody);
+
+  for (var i = 0; i < 3; i++) {
+    var linha = document.createElement("tr");
+  
+    for (var j = 0; j < 3; j++) {
+      var coluna = document.createElement("td");
+      coluna.id = "celula-" + (i+1) + "-" + (j+1);
+      linha.appendChild(coluna);
+    }
+  
+  tBody.appendChild(linha);
+  }
+
+  tabela.classList.add("table", "table-bordered", "table-hover");
+  
+  document.getElementById('mensagemEx56').innerHTML = "";
+  document.getElementById('mensagemEx56').appendChild(tabela);
+}
+
+function preencherCelulaEx56() {
+  var linha = document.getElementById("linhaEx56").value;
+  var coluna = document.getElementById("colunaEx56").value;
+  var texto = document.getElementById("textoAInserirEx56").value;
+  
+  var celula = document.getElementById("celula-" + linha + "-" + coluna);
+
+  if(celula == null){
+    alert("É necessário gerar a tabela primeiro!");
+    return;
+  }
+  
+  celula.textContent = texto;
+}
+
+
 //#endregion

@@ -2552,8 +2552,42 @@
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="gerarTabela()"&gt;Gerar tabela&lt;/button&gt;
+
+              &lt;script&gt;
+              function gerarTabela() {
+                var linhas = parseInt(prompt("Digite o número de linhas da tabela:"));
+                var colunas = parseInt(prompt("Digite o número de colunas da tabela:"));
+
+                if (isNaN(linhas) || isNaN(colunas) || linhas &lt; 0 || colunas &lt; 0){
+                  document.getElementById('resultado').innerHTML = "Valor inválido.&lt;br/&gt;" +
+                                                                   "Por favor, digite um número maior que zero.";
+                  return;
+                }
                 
+                var tabela = document.createElement("table");
+
+                for (var i = 0; i &lt; linhas; i++) {
+                  var linha = document.createElement("tr");
+                
+                  for (var j = 0; j &lt; colunas; j++) {
+                    var coluna = document.createElement("td");
+                    coluna.textContent = "Linha " + (i + 1) + ", Coluna " + (j + 1);
+                    linha.appendChild(coluna);
+                  }
+                
+                tabela.appendChild(linha);
+                }
+                
+                document.getElementById('resultado').innerHTML = "";
+                document.getElementById('resultado').appendChild(tabela);
+              }
+              &lt;/script&gt;
             </code></pre>
+
+            <p id="mensagemEx55"></p>
 
             <button onclick="exercicio55()" class="btn btn-primary btn-lg">Validar Exercício 55</button>
           </section>
@@ -2566,10 +2600,78 @@
             </p>
 
             <pre><code>
+              &lt;button onclick="gerarTabela()"&gt;Gerar tabela&lt;/button&gt;
+
+              &lt;p id="tabela"&gt;&lt;/p&gt;
+
+              &lt;label for="linha"&gt;Selecione a linha:&lt;/label&gt;
+              &lt;input type="number" id="linha" value="1" min="1" max="3"&gt;
+                          
+              &lt;label for="coluna"&gt;Selecione a coluna:&lt;/label&gt;
+              &lt;input type="number" id="coluna" value="1" min="1" max="3"&gt;
+
+              &lt;label for="textoAInserir"&gt;Digite o texto a inserir na célula:&lt;/label&gt;
+              &lt;input type="text" id="textoAInserir" value="Teste"&gt;
+
+              &lt;button onclick="preencherCelula()"&gt;Preencher célula selecionada&lt;/button&gt;
+
+              &lt;script&gt;
+              function gerarTabela() {
+                var tabela = document.createElement("table");
+                var tBody = document.createElement("tbody");
+                tabela.appendChild(tBody);
+
+                for (var i = 0; i &lt; 3; i++) {
+                  var linha = document.createElement("tr");
                 
+                  for (var j = 0; j &lt; 3; j++) {
+                    var coluna = document.createElement("td");
+                    coluna.id = "celula-" + (i+1) + "-" + (j+1);
+                    linha.appendChild(coluna);
+                  }
+                
+                tBody.appendChild(linha);
+                }
+
+                tabela.classList.add("table", "table-bordered", "table-hover");
+                
+                document.getElementById('tabela').innerHTML = "";
+                document.getElementById('tabela').appendChild(tabela);
+              }
+
+              function preencherCelula() {
+                var linha = document.getElementById("linha").value;
+                var coluna = document.getElementById("coluna").value;
+                var texto = document.getElementById("textoAInserir").value;
+                
+                var celula = document.getElementById("celula-" + linha + "-" + coluna);
+
+                if(celula == null){
+                  alert("É necessário gerar a tabela primeiro!");
+                  return;
+                }
+                
+                celula.textContent = texto;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio56()" class="btn btn-primary btn-lg">Validar Exercício 56</button>
+            <button onclick="gerarTabelaEx56()" class="btn btn-secondary" style="margin-bottom: 25px;">Gerar tabela</button>
+
+            <p id="mensagemEx56"></p>
+
+            <label for="linhaEx56">Selecione a linha:</label>
+            <input type="number" id="linhaEx56" value="1" min="1" max="3">
+            
+            <label for="colunaEx56">Selecione a coluna:</label>
+            <input type="number" id="colunaEx56" value="1" min="1" max="3">
+
+            <label for="textoAInserirEx56">Digite o texto a inserir na célula:</label>
+            <input type="text" id="textoAInserirEx56" value="Teste">
+
+            <p></p>
+
+            <button onclick="preencherCelulaEx56()" class="btn btn-primary btn-lg">Validar Exercício 56</button>
           </section>
           <hr class="divider">
           
