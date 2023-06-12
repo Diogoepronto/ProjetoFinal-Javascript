@@ -876,8 +876,8 @@ function exercicio46() {
     }
   }
 
-  var resultado = "<strong>Array original:</strong><br/> " + numeros + "<br/><br/>" + 
-                  "<strong>Array sem números repetidos:</strong><br/> " + numerosUnicos;
+  var resultado = "<strong>Array original:</strong><br/> " + numeros.join(", ") + "<br/><br/>" + 
+                  "<strong>Array sem números repetidos:</strong><br/> " + numerosUnicos.join(", ");
 
   document.getElementById("mensagemEx46").innerHTML = resultado;
   document.getElementById("mensagemEx46").classList.remove("hidden");
@@ -905,7 +905,7 @@ function exercicio47() {
     }
   }
 
-  var resultado = "<strong>Array original:</strong><br/> " + numeros + "<br/><br/>" +
+  var resultado = "<strong>Array original:</strong><br/> " + numeros.join(", ") + "<br/><br/>" +
                   "<strong>Número mais frequente:</strong><br/> " + numeroMaisFrequente;
 
   document.getElementById("mensagemEx47").innerHTML = resultado;
@@ -936,6 +936,74 @@ function exercicio48(numero) {
   document.getElementById("mensagemEx48").classList.remove("hidden");
 }
 
+
+
+function exercicio49() {
+  var array1 = [];
+  var array2 = [];
+  
+  for (var i = 0; i < 10; i++) {
+    array1.push(Math.floor(Math.random() * 20) + 1);
+    array2.push(Math.floor(Math.random() * 20) + 1);
+  }
+
+  var arraySomado = [];
+
+  for (var i = 0; i < array1.length; i++) {
+    arraySomado.push(array1[i] + array2[i]);
+  }
+
+  var resultado = "Array 1 = [" + array1.join(", ") + "] <br/>" + 
+                  "Array 2 = [" + array2.join(", ") + "] <br/>" + 
+                  "Resultado = [" + arraySomado.join(", ") + "]";
+
+  document.getElementById("mensagemEx49").innerHTML = resultado;
+  document.getElementById("mensagemEx49").classList.remove("hidden");
+}
+
+
+function exercicio50() {
+  var matriz = [];
+  
+  for (var i = 0; i < 10; i++) {
+    var linha = [];
+  
+    for (var j = 0; j < 10; j++) {
+      linha.push(Math.floor(Math.random() * 100) + 1)
+    }
+  
+    matriz.push(linha);
+  }
+
+  var matrizAExibir = "<table class='table table-sm table-borderless text-center'><tbody>";
+  for (var linha of matriz) {
+    matrizAExibir += "<tr>"
+
+    for (var elemento of linha) {
+      matrizAExibir += "<td>" + elemento + "</td>";
+    }
+
+    matrizAExibir += "</tr>"
+  }  
+  matrizAExibir += "</tbody></table>";
+
+  var quantidade = 0;
+
+  for (var i = 0; i < matriz.length; i++) {
+    for (var j = 0; j < matriz.length; j++) {
+      if (matriz[i][j] >= 10 && matriz[i][j] <= 20) {
+        quantidade++;
+      }
+    }
+  }
+
+  var resultado = "<p>Matriz:</p>" +
+                  matrizAExibir +
+                  "<p>Quantidade de elementos entre 10 e 20: " + quantidade + "</p>";
+
+  document.getElementById("mensagemEx50").innerHTML = resultado;
+  document.getElementById("mensagemEx50").classList.remove("hidden");
+}
 
 
 //#endregion

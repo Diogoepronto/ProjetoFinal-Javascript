@@ -2192,8 +2192,8 @@
                   }
                 }
 
-                var resultado = "Array original:&lt;br/&gt; " + numeros + "&lt;br/&gt;&lt;br/&gt;" + 
-                                "Array sem números repetidos:&lt;br/&gt; " + numerosUnicos;
+                var resultado = "Array original:&lt;br/&gt; " + numeros.join(", ") + "&lt;br/&gt;&lt;br/&gt;" + 
+                                "Array sem números repetidos:&lt;br/&gt; " + numerosUnicos.join(", ");
 
                 document.getElementById("resultado").innerHTML = resultado;
               }
@@ -2241,7 +2241,7 @@
                   }
                 }
 
-                var resultado = "Array original:&lt;br/&gt; " + numeros + "&lt;br/&gt;&lt;br/&gt;" +
+                var resultado = "Array original:&lt;br/&gt; " + numeros.join(", ") + "&lt;br/&gt;&lt;br/&gt;" +
                                 "Número mais frequente&lt;br/&gt; " + numeroMaisFrequente;
 
                 document.getElementById("resultado").innerHTML = resultado;
@@ -2313,24 +2313,102 @@
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="somarArrays()"&gt;somar arrays&lt;/button&gt;
+
+              &lt;script&gt;
+              function somarArrays() {
+                var array1 = [];
+                var array2 = [];
                 
+                for (var i = 0; i &lt; 10; i++) {
+                  array1.push(Math.floor(Math.random() * 20) + 1);
+                  array2.push(Math.floor(Math.random() * 20) + 1);
+                }
+
+                var arraySomado = [];
+
+                for (var i = 0; i &lt; array1.length; i++) {
+                  arraySomado.push(array1[i] + array2[i]);
+                }
+
+                var resultado = "Array 1 = [" + array1.join(", ") + "] &lt;br/&gt;" + 
+                                "Array 2 = [" + array2.join(", ") + "] &lt;br/&gt;" + 
+                                "Resultado = [" + arraySomado.join(", ") + "]";
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 49</button>
+            <p id="mensagemEx49" class="hidden"></p>
+
+
+            <button onclick="exercicio49()" class="btn btn-primary btn-lg">Validar Exercício 49</button>
           </section>
           <hr class="divider">
           
           <section id="exercicio50">
             <h2>Exercício 50</h2>
             <p class="lead">
-              Crie um programa que guarde em memória uma matriz (bidimensional) 10linhas x 10colunas com números inteiros aleatórios e mostre a quantidade de elementos entre 10 e 20.
+              Crie um programa que guarde em memória uma matriz (bidimensional) 10 linhas x 10 colunas com números inteiros aleatórios e mostre a quantidade de elementos entre 10 e 20.
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="gerarMatriz()"&gt;Gerar e analisar matriz&lt;/button&gt;
+
+              &lt;script&gt;
+              function gerarMatriz() {
+                var matriz = [];
                 
+                for (var i = 0; i &lt; 10; i++) {
+                  var linha = [];
+                
+                  for (var j = 0; j &lt; 10; j++) {
+                    linha.push(Math.floor(Math.random() * 100) + 1)
+                  }
+                
+                  matriz.push(linha);
+                }
+
+                var matrizAExibir = "&lt;table class='table table-sm table-borderless text-center'&gt;&lt;tbody&gt;";
+                for (var linha of matriz) {
+                  matrizAExibir += "&lt;tr&gt;"
+
+                  for (var elemento of linha) {
+                    matrizAExibir += "&lt;td&gt;" + elemento + "&lt;/td&gt;";
+                  }
+
+                  matrizAExibir += "&lt;/tr&gt;"
+                }  
+                matrizAExibir += "&lt;/tbody&gt;&lt;/table&gt;";
+
+                var quantidade = 0;
+
+                for (var i = 0; i &lt; matriz.length; i++) {
+                  for (var j = 0; j &lt; matriz.length; j++) {
+                    if (matriz[i][j] &gt;= 10 && matriz[i][j] &lt;= 20) {
+                      quantidade++;
+                    }
+                  }
+                }
+
+                var resultado = "&lt;p&gt;Matriz:&lt;/p&gt;" +
+                                matrizAExibir +
+                                "&lt;p&gt;Quantidade de elementos entre 10 e 20: " + quantidade + "&lt;/p&gt;";
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 50</button>
+            <p id="mensagemEx50" class="hidden"></p>
+
+
+            <button onclick="exercicio50()" class="btn btn-primary btn-lg">Validar Exercício 50</button>
           </section>
           <hr class="divider">
         </section>
@@ -2348,7 +2426,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 51</button>
           </section>
           <hr class="divider">
           
@@ -2362,7 +2440,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 52</button>
           </section>
           <hr class="divider">
           
@@ -2377,7 +2455,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 53</button>
           </section>
           <hr class="divider">
           
@@ -2391,7 +2469,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 54</button>
           </section>
           <hr class="divider">
           
@@ -2405,7 +2483,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 55</button>
           </section>
           <hr class="divider">
           
@@ -2419,7 +2497,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 56</button>
           </section>
           <hr class="divider">
           
@@ -2434,7 +2512,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 57</button>
           </section>
           <hr class="divider">
           
@@ -2448,7 +2526,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 58</button>
           </section>
           <hr class="divider">
           
@@ -2463,7 +2541,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 59</button>
           </section>
           <hr class="divider">
           
@@ -2479,7 +2557,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício</button>
+            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 60</button>
           </section>
           <hr class="divider">
         </section>
