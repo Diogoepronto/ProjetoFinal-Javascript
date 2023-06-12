@@ -2683,8 +2683,25 @@
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="getSize()"&gt;Mostrar tamanho da janela&lt;/button&gt;
+
+              &lt;script&gt;
+              function getSize() {
+                document.body.setAttribute("onresize", "getSize()");
                 
+                var altura = window.innerHeight;
+                var largura = window.innerWidth;
+
+                var infoElemento = document.getElementById("resultado");
+                infoElemento.innerHTML = "Altura: " + altura + "px &lt;br&gt;" + 
+                                         "Largura: " + largura + "px";
+              }
+              &lt;/script&gt;
             </code></pre>
+
+            <p id="mensagemEx57" ></p>
 
             <button onclick="exercicio57()" class="btn btn-primary btn-lg">Validar Exercício 57</button>
           </section>
@@ -2697,8 +2714,38 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="bubbleSort()"&gt;Ordenar array&lt;/button&gt;
+
+              &lt;script&gt;
+              function bubbleSort() {
+                var array = [];
+                for (var i = 0; i &lt; 100; i++) {
+                  array.push(Math.floor(Math.random() * 100));
+                }
+
+                var arrayOrdenado = [...array];
+
+                for (var i = 0; i &lt; arrayOrdenado.length - 1; i++) {
+                  for (var j = 0; j &lt; arrayOrdenado.length - 1 - i; j++) {
+                    if (arrayOrdenado[j] &gt; arrayOrdenado[j + 1]) {
+                      var temp = arrayOrdenado[j];
+                      arrayOrdenado[j] = arrayOrdenado[j + 1];
+                      arrayOrdenado[j + 1] = temp;
+                    }
+                  }
+                }
+
+                var resultado = "&lt;p&gt;Array original:&lt;br&gt; " + array.join(", ") + "&lt;/p&gt;" +
+                                "&lt;p&gt;Array ordenado:&lt;br&gt; " + arrayOrdenado.join(", ") + "&lt;/p&gt;";
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }  
+              &lt;/script&gt;                
             </code></pre>
+
+            <p id="mensagemEx58" class="hidden"></p>
 
             <button onclick="exercicio58()" class="btn btn-primary btn-lg">Validar Exercício 58</button>
           </section>
@@ -2712,8 +2759,40 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="insertionSort()"&gt;Ordenar array&lt;/button&gt;
+
+              &lt;script&gt;
+              function insertionSort() {
+                var array = [];
+                for (var i = 0; i &lt; 100; i++) {
+                  array.push(Math.floor(Math.random() * 100));
+                }
+
+                var arrayOrdenado = [...array];
+
+                for (var i = 1; i &lt; arrayOrdenado.length; i++) {
+                  var key = arrayOrdenado[i];
+                  var j = i - 1;
+
+                  while (j &gt;= 0 && arrayOrdenado[j] &gt; key) {
+                    arrayOrdenado[j + 1] = arrayOrdenado[j];
+                    j = j - 1;
+                  }
+
+                  arrayOrdenado[j + 1] = key;
+                }
+
+                var resultado = "&lt;p&gt;Array original:&lt;br&gt; " + array.join(", ") + "&lt;/p&gt;" +
+                                "&lt;p&gt;Array ordenado:&lt;br&gt; " + arrayOrdenado.join(", ") + "&lt;/p&gt;";
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
+
+            <p id="mensagemEx59" class="hidden"></p>
 
             <button onclick="exercicio59()" class="btn btn-primary btn-lg">Validar Exercício 59</button>
           </section>

@@ -1122,5 +1122,72 @@ function preencherCelulaEx56() {
   celula.textContent = texto;
 }
 
+//---Exercício 57
+
+function exercicio57() {
+  document.body.setAttribute("onresize", "exercicio57()");
+  
+  var altura = window.innerHeight;
+  var largura = window.innerWidth;
+
+  var infoElemento = document.getElementById("mensagemEx57");
+  infoElemento.innerHTML = "<strong>Altura:</strong> " + altura + "px <br>" + 
+                           "<strong>Largura:</strong> " + largura + "px";
+}
+
+
+function exercicio58() {
+  var array = [];
+  for (var i = 0; i < 100; i++) {
+    array.push(Math.floor(Math.random() * 100));
+  }
+
+  var arrayOrdenado = [...array];
+
+  for (var i = 0; i < arrayOrdenado.length - 1; i++) {
+    for (var j = 0; j < arrayOrdenado.length - 1 - i; j++) {
+      if (arrayOrdenado[j] > arrayOrdenado[j + 1]) {
+        // Trocar os elementos de posição
+        var temp = arrayOrdenado[j];
+        arrayOrdenado[j] = arrayOrdenado[j + 1];
+        arrayOrdenado[j + 1] = temp;
+      }
+    }
+  }
+
+  var resultado = "<p><strong>Array original:</strong><br> " + array.join(", ") + "</p>" +
+                  "<p><strong>Array ordenado:</strong><br> " + arrayOrdenado.join(", ") + "</p>";
+
+  document.getElementById("mensagemEx58").innerHTML = resultado;
+  document.getElementById("mensagemEx58").classList.remove("hidden");
+}
+
+function exercicio59() {
+  var array = [];
+  for (var i = 0; i < 100; i++) {
+    array.push(Math.floor(Math.random() * 100));
+  }
+
+  var arrayOrdenado = [...array];
+
+  for (var i = 1; i < arrayOrdenado.length; i++) {
+    var key = arrayOrdenado[i];
+    var j = i - 1;
+
+    while (j >= 0 && arrayOrdenado[j] > key) {
+      arrayOrdenado[j + 1] = arrayOrdenado[j];
+      j = j - 1;
+    }
+
+    arrayOrdenado[j + 1] = key;
+  }
+
+  var resultado = "<p><strong>Array original:</strong><br> " + array.join(", ") + "</p>" +
+                  "<p><strong>Array ordenado:</strong><br> " + arrayOrdenado.join(", ") + "</p>";
+
+  document.getElementById("mensagemEx59").innerHTML = resultado;
+  document.getElementById("mensagemEx59").classList.remove("hidden");
+}
+
 
 //#endregion
