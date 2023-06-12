@@ -2807,8 +2807,42 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="selectionSort()"&gt;Ordenar array&lt;/button&gt;
+
+              &lt;script&gt;
+              function selectionSort() {
+                var array = [];
+                for (var i = 0; i &lt; 100; i++) {
+                  array.push(Math.floor(Math.random() * 100));
+                }
+
+                var arrayOrdenado = [...array];
+
+                for (var i = 0; i &lt; arrayOrdenado.length - 1; i++) {
+                  var minIndex = i;
+
+                  for (var j = i + 1; j &lt; arrayOrdenado.length; j++) {
+                    if (arrayOrdenado[j] &lt; arrayOrdenado[minIndex]) {
+                      minIndex = j;
+                    }
+                  }
+
+                  var temp = arrayOrdenado[i];
+                  arrayOrdenado[i] = arrayOrdenado[minIndex];
+                  arrayOrdenado[minIndex] = temp;
+                }
+
+                var resultado = "&lt;p&gt;Array original:&lt;br&gt; " + array.join(", ") + "&lt;/p&gt;" +
+                                "&lt;p&gt;Array ordenado:&lt;br&gt; " + arrayOrdenado.join(", ") + "&lt;/p&gt;";
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
+
+            <p id="mensagemEx60" class="hidden"></p>
 
             <button onclick="exercicio60()" class="btn btn-primary btn-lg">Validar Exercício 60</button>
           </section>

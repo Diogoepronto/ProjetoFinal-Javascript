@@ -1190,4 +1190,33 @@ function exercicio59() {
 }
 
 
+function exercicio60() {
+  var array = [];
+  for (var i = 0; i < 100; i++) {
+    array.push(Math.floor(Math.random() * 100));
+  }
+
+  var arrayOrdenado = [...array];
+
+  for (var i = 0; i < arrayOrdenado.length - 1; i++) {
+    var minIndex = i;
+
+    for (var j = i + 1; j < arrayOrdenado.length; j++) {
+      if (arrayOrdenado[j] < arrayOrdenado[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+    var temp = arrayOrdenado[i];
+    arrayOrdenado[i] = arrayOrdenado[minIndex];
+    arrayOrdenado[minIndex] = temp;
+  }
+
+  var resultado = "<p><strong>Array original:</strong><br> " + array.join(", ") + "</p>" +
+                  "<p><strong>Array ordenado:</strong><br> " + arrayOrdenado.join(", ") + "</p>";
+
+  document.getElementById("mensagemEx60").innerHTML = resultado;
+  document.getElementById("mensagemEx60").classList.remove("hidden");
+}
+
 //#endregion
