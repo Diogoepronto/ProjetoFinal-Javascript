@@ -912,6 +912,32 @@ function exercicio47() {
   document.getElementById("mensagemEx47").classList.remove("hidden");
 }
 
+
+function exercicio48(numero) {
+  var numero = parseInt(prompt("Digite um número maior que 1000:"));
+  var resultado = "Resultado: ";
+  
+  if (isNaN(numero) || numero < 1000) {
+    resultado = "<strong style='color: red;'>Valor inválido. <br/>" + 
+                "O número deve ser maior que 1000.</strong>";
+  } else {    
+    var numeroString = numero.toString();
+  
+    for (var i = 0; i < numeroString.length; i++) {
+      resultado += numeroString[i];
+  
+      if (numeroString[i] % 2 === 0 && numeroString[i + 1] % 2 === 0) {
+        resultado += "-";
+      }
+    }
+  }  
+
+  document.getElementById("mensagemEx48").innerHTML = resultado;
+  document.getElementById("mensagemEx48").classList.remove("hidden");
+}
+
+
+
 //#endregion
 
 //#region EXERCÍCIO 51 ~ 60

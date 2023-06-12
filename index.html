@@ -2264,10 +2264,39 @@
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="hifenizarNumero()"&gt;Hifenizar número&lt;/button&gt;
+
+              &lt;script&gt;
+              function hifenizarNumero(numero) {
+                var numero = parseInt(prompt("Digite um número maior que 1000:"));
+                var resultado = "Resultado: ";
                 
+                if (isNaN(numero) || numero &lt; 1000) {
+                  resultado = "Valor inválido. &lt;br/&gt;" + 
+                              "O número deve ser maior que 1000.";
+                } else {    
+                  var numeroString = numero.toString();
+                
+                  for (var i = 0; i &lt; numeroString.length; i++) {
+                    resultado += numeroString[i];
+                
+                    if (numeroString[i] % 2 === 0 && numeroString[i + 1] % 2 === 0) {
+                      resultado += "-";
+                    }
+                  }
+                }  
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 48</button>
+            <p id="mensagemEx48" class="hidden"></p>
+
+
+            <button onclick="exercicio48()" class="btn btn-primary btn-lg">Validar Exercício 48</button>
           </section>
           <hr class="divider">
           
