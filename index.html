@@ -50,6 +50,10 @@
     max-height: 30px;
   }
 
+  table {
+    table-layout: fixed;
+  }
+
 </style>
 <!-- #endregion -->
 </head>
@@ -2025,7 +2029,7 @@
 
               &lt;p id="resultado"&gt;&lt;/p&gt;
 
-              &lt;button onclick="simularEleicao()"&gt;Iniciar concurso&lt;/button&gt;
+              &lt;button onclick="simularEleicao()"&gt;Resultado da eleição&lt;/button&gt;
 
               &lt;script&gt;
               function simularEleicao() {
@@ -2101,10 +2105,62 @@
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="contarOcorrencias()"&gt;Contar ocorrências&lt;/button&gt;
+
+              &lt;script&gt;
+              function contarOcorrencias() {
+                var numeros = [];
+                for (var i = 0; i &lt; 100; i++) {
+                  numeros.push(Math.floor(Math.random() * 10) + 1);
+                }
+
+                var ocorrencias = {};
+
+                for (var i = 0; i &lt; numeros.length; i++) {
+                var numero = numeros[i];
+
+                if (ocorrencias[numero]) {
+                    ocorrencias[numero]++;
+                  } else {
+                    ocorrencias[numero] = 1;
+                  }
+                }
                 
+                var arrayAExibir = "&lt;table class='table table-sm table-borderless text-center'&gt;&lt;tbody&gt;";
+                var contador = 0;
+
+                for (var i = 0; i &lt; numeros.length; i++){
+                  if (contador == 0){
+                    arrayAExibir += "&lt;tr&gt;"
+                  }
+                  
+                  arrayAExibir += "&lt;td&gt;" + numeros[i] + "&lt;/td&gt;";
+                  
+                  contador++;
+                  
+                  if (contador == 10){
+                    arrayAExibir += "&lt;/tr&gt;"
+                    contador = 0;
+                  }
+                }
+                
+                arrayAExibir += "&lt;/tbody&gt;&lt;/table&gt;";
+                var resultado = arrayAExibir;
+
+                for (var numero in ocorrencias) {
+                  resultado += "O número " + numero + " ocorre " + ocorrencias[numero] + " vezes.&lt;br/&gt;";
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 45</button>
+            <p id="mensagemEx45" class="hidden"></p>
+
+            <button onclick="exercicio45()" class="btn btn-primary btn-lg">Validar Exercício 45</button>
           </section>
           <hr class="divider">
         
@@ -2115,10 +2171,39 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="removerDuplicados()"&gt;Gerar array&lt;/button&gt;
+
+              &lt;script&gt;
+              function removerDuplicados() {
+                var numeros = [];
+                for (var i = 0; i &lt; 100; i++) {
+                  numeros.push(Math.floor(Math.random() * 50) + 1);
+                }
+
+                var numerosUnicos = [];
+
+                for (var i = 0; i &lt; numeros.length; i++) {
+                  var numero = numeros[i];
+
+                  if (numerosUnicos.indexOf(numero) === -1) {
+                    numerosUnicos.push(numero);
+                  }
+                }
+
+                var resultado = "Array original:&lt;br/&gt; " + numeros + "&lt;br/&gt;&lt;br/&gt;" + 
+                                "Array sem números repetidos:&lt;br/&gt; " + numerosUnicos;
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 46</button>
+            <p id="mensagemEx46" style="word-break: break-all;" class="hidden"></p>
+
+
+            <button onclick="exercicio46()" class="btn btn-primary btn-lg">Validar Exercício 46</button>
           </section>
           <hr class="divider">
           

@@ -813,6 +813,77 @@ function exercicio44() {
   document.getElementById("mensagemEx44").classList.remove("hidden");
 }
 
+function exercicio45() {
+  var numeros = [];
+  for (var i = 0; i < 100; i++) {
+    numeros.push(Math.floor(Math.random() * 10) + 1);
+  }
+
+  var ocorrencias = {};
+
+  for (var i = 0; i < numeros.length; i++) {
+  var numero = numeros[i];
+
+  if (ocorrencias[numero]) {
+      ocorrencias[numero]++;
+    } else {
+      ocorrencias[numero] = 1;
+    }
+  }
+  
+  var arrayAExibir = "<table class='table table-sm table-borderless text-center'><tbody>";
+  var contador = 0;
+
+  for (var i = 0; i < numeros.length; i++){
+    if (contador == 0){
+      arrayAExibir += "<tr>"
+    }
+    
+    arrayAExibir += "<td>" + numeros[i] + "</td>";
+    
+    contador++;
+    
+    if (contador == 10){
+      arrayAExibir += "</tr>"
+      contador = 0;
+    }
+  }
+  
+  arrayAExibir += "</tbody></table>";
+  var resultado = arrayAExibir;
+
+  for (var numero in ocorrencias) {
+    resultado += "O número " + numero + " ocorre " + ocorrencias[numero] + " vezes.<br/>";
+  }
+
+  document.getElementById("mensagemEx45").innerHTML = resultado;
+  document.getElementById("mensagemEx45").classList.remove("hidden");
+}
+
+function exercicio46() {
+  var numeros = [];
+  for (var i = 0; i < 100; i++) {
+    numeros.push(Math.floor(Math.random() * 50) + 1);
+  }
+
+  var numerosUnicos = [];
+
+  for (var i = 0; i < numeros.length; i++) {
+    var numero = numeros[i];
+
+    if (numerosUnicos.indexOf(numero) === -1) {
+      numerosUnicos.push(numero);
+    }
+  }
+
+  var resultado = "<strong>Array original:</strong><br/> " + numeros + "<br/><br/>" + 
+                  "<strong>Array sem números repetidos:</strong><br/> " + numerosUnicos;
+
+  document.getElementById("mensagemEx46").innerHTML = resultado;
+  document.getElementById("mensagemEx46").classList.remove("hidden");
+}
+
+
 //#endregion
 
 //#region EXERCÍCIO 51 ~ 60
