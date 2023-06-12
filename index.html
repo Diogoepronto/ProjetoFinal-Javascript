@@ -2524,10 +2524,24 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="seletorDeCores"&gt;Selecione uma cor:&lt;/label&gt;
+              &lt;input type="color" oninput="definirCorDoParagrafo()" id="seletorDeCores" value="#ff0000"&gt;
+              &lt;p id="paragrafoColorido"&gt;Selecione uma cor de fundo para este parágrafo.&lt;/p&gt;
+
+              &lt;script&gt;
+              function definirCorDoParagrafo() {
+                var cor = document.getElementById("seletorDeCores").value;
+                var paragrafo = document.getElementById("paragrafoColorido");
+                paragrafo.style.background = cor;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio54()" class="btn btn-primary btn-lg">Validar Exercício 54</button>
+            <label for="seletorCorEx54">Selecione uma cor:</label>
+            <input type="color" oninput="exercicio54()" id="seletorCorEx54" style="width: 80px; height: 60px; border: none; cursor: pointer;" value="#ff0000">
+            <p id="mensagemEx54" style="line-height: 50px;">Selecione uma cor de fundo para este parágrafo 😀</p>
+
+            <button onclick="alert('Selecione uma cor no seletor de cores para validar')" class="btn btn-primary btn-lg">Validar Exercício 54</button>
           </section>
           <hr class="divider">
           

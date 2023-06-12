@@ -1044,4 +1044,10 @@ function exercicio53() {
   document.getElementById("main-wrapper").style.background = cor;
 }
 
+function exercicio54() {
+  var cor = document.getElementById("seletorCorEx54").value;
+  var paragrafo = document.getElementById("mensagemEx54");
+  paragrafo.style.background = cor;
+}
+
 //#endregion
