@@ -2214,10 +2214,44 @@
             </p>
 
             <pre><code>
-                
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="encontrarNumeroMaisFrequente()"&gt;Gerar array&lt;/button&gt;
+
+              &lt;script&gt;
+              function encontrarNumeroMaisFrequente() {
+                var numeros = [];
+                for (var i = 0; i &lt; 100; i++) {
+                  numeros.push(Math.floor(Math.random() * 100) + 1);
+                }
+
+                var contador = {};
+                var numeroMaisFrequente;
+                var frequenciaMaxima = 0;
+
+                for (var i = 0; i &lt; numeros.length; i++) {
+                  var numero = numeros[i];
+                  contador[numero] = (contador[numero] || 0) + 1;
+                }
+
+                for (var numero in contador) {
+                  if (contador[numero] &gt; frequenciaMaxima) {
+                    frequenciaMaxima = contador[numero];
+                    numeroMaisFrequente = numero;
+                  }
+                }
+
+                var resultado = "Array original:&lt;br/&gt; " + numeros + "&lt;br/&gt;&lt;br/&gt;" +
+                                "Número mais frequente&lt;br/&gt; " + numeroMaisFrequente;
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 47</button>
+            <p id="mensagemEx47" style="word-break: break-all;" class="hidden"></p>
+
+            <button onclick="exercicio47()" class="btn btn-primary btn-lg">Validar Exercício 47</button>
           </section>
           <hr class="divider">
           

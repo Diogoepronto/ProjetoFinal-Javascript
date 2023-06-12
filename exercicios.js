@@ -883,6 +883,34 @@ function exercicio46() {
   document.getElementById("mensagemEx46").classList.remove("hidden");
 }
 
+function exercicio47() {
+  var numeros = [];
+  for (var i = 0; i < 100; i++) {
+    numeros.push(Math.floor(Math.random() * 100) + 1);
+  }
+
+  var contador = {};
+  var numeroMaisFrequente;
+  var frequenciaMaxima = 0;
+
+  for (var i = 0; i < numeros.length; i++) {
+    var numero = numeros[i];
+    contador[numero] = (contador[numero] || 0) + 1;
+  }
+
+  for (var numero in contador) {
+    if (contador[numero] > frequenciaMaxima) {
+      frequenciaMaxima = contador[numero];
+      numeroMaisFrequente = numero;
+    }
+  }
+
+  var resultado = "<strong>Array original:</strong><br/> " + numeros + "<br/><br/>" +
+                  "<strong>Número mais frequente:</strong><br/> " + numeroMaisFrequente;
+
+  document.getElementById("mensagemEx47").innerHTML = resultado;
+  document.getElementById("mensagemEx47").classList.remove("hidden");
+}
 
 //#endregion
 
