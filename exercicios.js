@@ -1010,4 +1010,15 @@ function exercicio50() {
 
 //#region EXERCÍCIO 51 ~ 60
 
+function exercicio51() {
+	var frase = document.getElementById("fraseEx51").value;
+
+  var regex = /[^\w\s]/gi;
+
+  var textoSemEspeciais = frase.replace(regex, '');
+
+  document.getElementById("mensagemEx51").innerHTML = "<strong>" + textoSemEspeciais + "</strong>";
+  document.getElementById("mensagemEx51").classList.remove("hidden");
+}  
+
 //#endregion

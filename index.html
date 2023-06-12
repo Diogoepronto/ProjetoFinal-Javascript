@@ -2423,10 +2423,32 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="frase"&gt;Digite uma frase:&lt;/label&gt;
+              &lt;input type="text" id="frase"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="removerCaracteresEspeciais()"&gt;Remover caracteres especiais&lt;/button&gt;
+
+              &lt;script&gt;
+              function removerCaracteresEspeciais() {
+                var frase = document.getElementById("frase").value;
+
+                var regex = /[^\w\s]/gi;
+
+                var textoSemEspeciais = frase.replace(regex, '');
+
+                document.getElementById("resultado").innerHTML = "&lt;strong&gt;" + textoSemEspeciais + "&lt;/strong&gt;";
+              }  
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 51</button>
+            <label for="fraseEx51">Digite uma frase:</label>
+            <input type="text" id="fraseEx51">
+
+            <p id="mensagemEx51" class="hidden"></p>
+
+            <button onclick="exercicio51()" class="btn btn-primary btn-lg">Validar Exercício 51</button>
           </section>
           <hr class="divider">
           
@@ -2440,7 +2462,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 52</button>
+            <button onclick="exercicio52()" class="btn btn-primary btn-lg">Validar Exercício 52</button>
           </section>
           <hr class="divider">
           
@@ -2455,7 +2477,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 53</button>
+            <button onclick="exercicio53()" class="btn btn-primary btn-lg">Validar Exercício 53</button>
           </section>
           <hr class="divider">
           
@@ -2469,7 +2491,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 54</button>
+            <button onclick="exercicio54()" class="btn btn-primary btn-lg">Validar Exercício 54</button>
           </section>
           <hr class="divider">
           
@@ -2483,7 +2505,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 55</button>
+            <button onclick="exercicio55()" class="btn btn-primary btn-lg">Validar Exercício 55</button>
           </section>
           <hr class="divider">
           
@@ -2497,7 +2519,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 56</button>
+            <button onclick="exercicio56()" class="btn btn-primary btn-lg">Validar Exercício 56</button>
           </section>
           <hr class="divider">
           
@@ -2512,7 +2534,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 57</button>
+            <button onclick="exercicio57()" class="btn btn-primary btn-lg">Validar Exercício 57</button>
           </section>
           <hr class="divider">
           
@@ -2526,7 +2548,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 58</button>
+            <button onclick="exercicio58()" class="btn btn-primary btn-lg">Validar Exercício 58</button>
           </section>
           <hr class="divider">
           
@@ -2541,7 +2563,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 59</button>
+            <button onclick="exercicio59()" class="btn btn-primary btn-lg">Validar Exercício 59</button>
           </section>
           <hr class="divider">
           
@@ -2557,7 +2579,7 @@
                 
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 60</button>
+            <button onclick="exercicio60()" class="btn btn-primary btn-lg">Validar Exercício 60</button>
           </section>
           <hr class="divider">
         </section>
