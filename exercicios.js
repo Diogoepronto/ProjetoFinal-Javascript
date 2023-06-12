@@ -766,6 +766,53 @@ function exercicio43(){
 }
 
 
+function exercicio44() {
+  var candidatos = [
+    {
+      nome: 'Candidato 1',
+      votos: 0
+    },
+    {
+      nome: 'Candidato 2',
+      votos: 0
+    },
+    {
+      nome: 'Candidato 3',
+      votos: 0
+    }
+  ];
+
+  for (var i = 0; i < candidatos.length; i++){
+    candidatos[i].votos = document.getElementById(`candidato${i+1}Ex44`).value;
+  }
+
+  var maxVotos = Math.max.apply(Math, candidatos.map(function(c) { return c.votos; }));
+
+  var indiceVencedores = [];
+
+  for (var i = 0; i < candidatos.length; i++){
+    if (candidatos[i].votos == maxVotos){
+
+      indiceVencedores.push(i);
+    }
+  }
+
+  var resultado = "";
+
+  if (indiceVencedores.length === 1){
+    resultado = "O candidato vencedor é o:<br/> <strong>" + candidatos[indiceVencedores[0]].nome + "</strong>";
+  } else {
+    var vencedores = indiceVencedores.map(function (indice) {
+      return candidatos[indice].nome;
+    })
+
+    resultado = "Os seguintes candidatos empataram no primeiro lugar:<br/><strong>" + vencedores.join("<br/>") + "</strong>";
+  }
+
+  document.getElementById("mensagemEx44").innerHTML = resultado;
+  document.getElementById("mensagemEx44").classList.remove("hidden");
+}
+
 //#endregion
 
 //#region EXERCÍCIO 51 ~ 60

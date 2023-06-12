@@ -42,6 +42,10 @@
     margin-bottom: 20px;    
   }
 
+  input[type="button"] {
+    width: 38px;
+  }
+
   .logo img {
     max-height: 30px;
   }
@@ -2007,10 +2011,86 @@
             </p>
 
             <pre><code>
-                
+              &lt;label for="candidato1"&gt;Candidato 1:&lt;/label&gt;
+              &lt;input type="number" id="candidato1" value="0" readonly&gt;
+              &lt;input type="button" onclick="document.getElementById('candidato1').stepUp()" value="+"&gt;
+
+              &lt;label for="candidato2"&gt;Candidato 2:&lt;/label&gt;
+              &lt;input type="number" id="candidato2" value="0" readonly&gt;
+              &lt;input type="button" onclick="document.getElementById('candidato2').stepUp()" value="+"&gt;
+
+              &lt;label for="candidato3"&gt;Candidato 3:&lt;/label&gt;
+              &lt;input type="number" id="candidato3" value="0" readonly&gt;
+              &lt;input type="button" onclick="document.getElementById('candidato3').stepUp()" value="+"&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
+              &lt;button onclick="simularEleicao()"&gt;Iniciar concurso&lt;/button&gt;
+
+              &lt;script&gt;
+              function simularEleicao() {
+                var candidatos = [
+                  {
+                    nome: 'Candidato 1',
+                    votos: 0
+                  },
+                  {
+                    nome: 'Candidato 2',
+                    votos: 0
+                  },
+                  {
+                    nome: 'Candidato 3',
+                    votos: 0
+                  }
+                ];
+
+                for (var i = 0; i &lt; candidatos.length; i++){
+                  candidatos[i].votos = document.getElementById(`candidato${i+1}`).value;
+                }
+
+                var maxVotos = Math.max.apply(Math, candidatos.map(function(c) { return c.votos; }));
+
+                var indiceVencedores = [];
+
+                for (var i = 0; i &lt; candidatos.length; i++){
+                  if (candidatos[i].votos == maxVotos){
+
+                    indiceVencedores.push(i);
+                  }
+                }
+
+                var resultado = "";
+
+                if (indiceVencedores.length === 1){
+                  resultado = "O candidato vencedor é o:&lt;br/&gt;" + candidatos[indiceVencedores[0]].nome;
+                } else {
+                  var vencedores = indiceVencedores.map(function (indice) {
+                    return candidatos[indice].nome;
+                  })
+
+                  resultado = "Os seguintes candidatos empataram no primeiro lugar:&lt;br/&gt;" + vencedores.join("&lt;br/&gt;");
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+              }
+              &lt;/script&gt;                
             </code></pre>
 
-            <button onclick="exercicio1()" class="btn btn-primary btn-lg">Validar Exercício 44</button>
+            <label for="candidato1Ex44">Candidato 1:</label>
+            <input type="number" id="candidato1Ex44" value="0" readonly>
+            <input type="button" onclick="document.getElementById('candidato1Ex44').stepUp()" value="+">
+
+            <label for="candidato2Ex44">Candidato 2:</label>
+            <input type="number" id="candidato2Ex44" value="0" readonly>
+            <input type="button" onclick="document.getElementById('candidato2Ex44').stepUp()" value="+">
+
+            <label for="candidato3Ex44">Candidato 3:</label>
+            <input type="number" id="candidato3Ex44" value="0" readonly>
+            <input type="button" onclick="document.getElementById('candidato3Ex44').stepUp()" value="+">
+
+            <p id="mensagemEx44" class="hidden"></p>
+
+            <button onclick="exercicio44()" class="btn btn-primary btn-lg">Validar Exercício 44</button>
           </section>
           <hr class="divider">
           
