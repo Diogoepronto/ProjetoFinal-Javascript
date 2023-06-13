@@ -42,7 +42,7 @@
     margin-bottom: 20px;    
   }
 
-  input[type="button"] {
+  input[type="button"].incremento {
     width: 38px;
   }
 
@@ -52,6 +52,59 @@
 
   table {
     table-layout: fixed;
+  }
+
+  .tabuleiro {
+    display: grid;
+    grid-template-areas:
+      'header header header header'
+      'pista aposta percorrido vitorias'
+      'pista aposta percorrido vitorias'
+      'pista aposta percorrido vitorias'
+      'footer footer footer footer';
+    grid-template-columns: 60% 1fr 1fr 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .pista {
+    width: 100%;
+    border-bottom: 8px solid #1CFF00;
+    background-image: url("./assets/images/background-jogo.gif");
+    background-size: contain;
+    border-radius: 4px;
+    border-image: repeating-linear-gradient(to right, #88EE00 0, #88EE00 8px, #44AA00 8px, #44AA00 16px) 1;
+  }
+
+  .pista img {
+    float: left;
+    max-height: 120px;
+    position: relative;
+  }
+
+  #txtbet1, 
+  #txtbet2, 
+  #txtbet3 
+  {
+    width: 80px;
+    height: 40px;
+    margin: 0;
+  }
+
+  .jogoHeader{
+    margin: 10px 0;
+    font-size: 120%;
+    font-weight: 600;
+  }
+
+  #btnIniciarJogo {
+    margin: 20px 0;
   }
 
 </style>
@@ -83,8 +136,7 @@
 		    <button id="sidebarCollapse" class="navbar-toggler d-block d-md-none" type="button"><span></span><span class="w-75"></span><span class="w-50"></span></button>
 		
 		    <!-- Logo --> 
-        <a class="logo ml-md-3" href="index.html" title="Trabalho Final de Javascript"> <img src="assets/images/LogoHorizontal.png" alt="Logo Diogo Alves"/> </a> 
-		    <span class="text-2 ml-2">v0.7</span>
+        <a class="logo ml-md-3" href="index.html" title="Trabalho Final de Javascript"> <img src="assets/images/LogoHorizontal.png" alt="Logo Diogo Alves"/> </a>
         <!-- Logo End -->
         
 		    <div id="header-nav" class="collapse navbar-collapse justify-content-end"></div>
@@ -189,7 +241,11 @@
             <li class="nav-item"><a class="nav-link" href="#exercicio60">Exercício 60</a></li>
           </ul>
         </li>
-        
+        <li class="nav-item"><a class="nav-link active" href="#jogoApostas">Jogo de Apostas</a>
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#jogo">Jogo</a></li>
+          </ul>
+        </li>
       </ul>
     </div>
     <!-- #endregion -->
@@ -2083,15 +2139,15 @@
 
             <label for="candidato1Ex44">Candidato 1:</label>
             <input type="number" id="candidato1Ex44" value="0" readonly>
-            <input type="button" onclick="document.getElementById('candidato1Ex44').stepUp()" value="+">
+            <input type="button" class="incremento" onclick="document.getElementById('candidato1Ex44').stepUp()" value="+">
 
             <label for="candidato2Ex44">Candidato 2:</label>
             <input type="number" id="candidato2Ex44" value="0" readonly>
-            <input type="button" onclick="document.getElementById('candidato2Ex44').stepUp()" value="+">
+            <input type="button" class="incremento" onclick="document.getElementById('candidato2Ex44').stepUp()" value="+">
 
             <label for="candidato3Ex44">Candidato 3:</label>
             <input type="number" id="candidato3Ex44" value="0" readonly>
-            <input type="button" onclick="document.getElementById('candidato3Ex44').stepUp()" value="+">
+            <input type="button" class="incremento" onclick="document.getElementById('candidato3Ex44').stepUp()" value="+">
 
             <p id="mensagemEx44" class="hidden"></p>
 
@@ -2851,7 +2907,268 @@
         </section>
         <!-- #endregion -->
         
+        <STYLE>
+          
+
+        </STYLE>
+
+        <section id="jogoApostas">
+          <h2>Jogo de Apostas</h2>
+          <section id="jogo">
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">HTML</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">CSS</a>
+              </li>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">JavaScript</a>
+              </li>
+            </ul>
+            <div class="tab-content my-3" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <pre><code>
+                  &lt;div class="tabuleiro"&gt;
+              
+                    &lt;span class="jogoHeader"&gt;Corredores&lt;/span&gt;
+                    &lt;span class="jogoHeader"&gt;Aposta&lt;/span&gt;
+                    &lt;span class="jogoHeader"&gt;Metros&lt;/span&gt;
+                    &lt;span class="jogoHeader"&gt;Vitórias&lt;/span&gt;
+                  
+                    &lt;div class="pista"&gt;&lt;img src="./assets/images/sonic-idle.gif" alt="Corredor Sonic" id="corredor1"&gt;&lt;/div&gt;
+                    &lt;input type="number" id="txtbet1" value="0" min="0" max="1000" step="5"&gt;
+                    &lt;span id="metros1"&gt;0/100&lt;/span&gt;
+                    &lt;span id="vitoria1"&gt;0&lt;/span&gt;
+                  
+                    &lt;div class="pista"&gt;&lt;img src="./assets/images/tails-idle.gif" alt="Corredor Tails" id="corredor2"&gt;&lt;/div&gt;
+                    &lt;input type="number" id="txtbet2" value="0" min="0" max="1000" step="5"&gt;
+                    &lt;span id="metros2"&gt;0/100&lt;/span&gt;
+                    &lt;span id="vitoria2"&gt;0&lt;/span&gt;
+                  
+                    &lt;div class="pista"&gt;&lt;img src="./assets/images/knuckles-idle.gif" alt="Corredor Knuckles" id="corredor3"&gt;&lt;/div&gt;
+                    &lt;input type="number" id="txtbet3" value="0" min="0" max="1000" step="5"&gt;
+                    &lt;span id="metros3"&gt;0/100&lt;/span&gt;
+                    &lt;span id="vitoria3"&gt;0&lt;/span&gt;
+                  
+                    &lt;input type="button" id="btnIniciarJogo" class="btn btn-lg btn-primary" value="Iniciar corrida!" onclick="startRace()"&gt;
+                    &lt;span&gt;Créditos&lt;/span&gt;
+                    &lt;span id="creditos"&gt;100&lt;/span&gt;
         
+                  &lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <pre><code>
+                  .tabuleiro {
+                    display: grid;
+                    grid-template-areas:
+                      'header header header header'
+                      'pista aposta percorrido vitorias'
+                      'pista aposta percorrido vitorias'
+                      'pista aposta percorrido vitorias'
+                      'footer footer footer footer';
+                    grid-template-columns: 60% 1fr 1fr 1fr;
+                    gap: 10px;
+                    text-align: center;
+                    align-items: center;
+                    justify-items: center;
+                
+                    border: 1px solid #eee;
+                    border-radius: 5px;
+                    padding: 20px;
+                  }
+                
+                  .pista {
+                    width: 100%;
+                    border-bottom: 8px solid #1CFF00;
+                    background-image: url("./assets/images/background-jogo.gif");
+                    background-size: contain;
+                    border-radius: 4px;
+                    border-image: repeating-linear-gradient(to right, #88EE00 0, #88EE00 8px, #44AA00 8px, #44AA00 16px) 1;
+                  }
+                
+                  .pista img {
+                    float: left;
+                    max-height: 120px;
+                    position: relative;
+                  }
+                
+                  #txtbet1, 
+                  #txtbet2, 
+                  #txtbet3 
+                  {
+                    width: 80px;
+                    height: 40px;
+                    margin: 0;
+                  }
+                
+                  .jogoHeader{
+                    margin: 10px 0;
+                    font-size: 120%;
+                    font-weight: 600;
+                  }
+                
+                  #btnIniciarJogo {
+                    margin: 20px 0;
+                  }
+                </code></pre>
+              </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <pre><code>
+                  function startRace(){
+  
+                    var corredor1 = document.getElementById("corredor1");
+                    var corredor2 = document.getElementById("corredor2");
+                    var corredor3 = document.getElementById("corredor3");
+                    
+                    var linhaDePartida = 1;
+                    var linhaDeChegada = (document.getElementById("jogo").offsetWidth * 0.6) - corredor1.offsetWidth;
+                                        
+                    var aposta1 = parseFloat(document.getElementById("txtbet1").value);
+                    var aposta2 = parseFloat(document.getElementById("txtbet2").value);
+                    var aposta3 = parseFloat(document.getElementById("txtbet3").value);
+                    
+                    var vitorias1 = parseInt(document.getElementById("vitoria1").innerHTML);
+                    var vitorias2 = parseInt(document.getElementById("vitoria2").innerHTML);
+                    var vitorias3 = parseInt(document.getElementById("vitoria3").innerHTML);
+                    
+                    var creditos = document.getElementById("creditos").innerHTML;
+                    
+                    if((aposta1 == "" && aposta2 == "" && aposta3 == "") ||
+                    (aposta1 == 0  && aposta2 == 0  && aposta3 == 0)){
+                      alert("Por favor, faça a sua aposta");
+                      return;
+                    }
+                    
+                    if (aposta1 == "") { aposta1 = 0 }
+                    if (aposta2 == "") { aposta2 = 0 }
+                    if (aposta3 == "") { aposta3 = 0 }
+                    
+                    if((aposta1 + aposta2 + aposta3) &gt; creditos){
+                      alert("O valor máximo que pode apostar é " + creditos);
+                      return;
+                    }
+                  
+                    document.getElementById("btnIniciarJogo").disabled = true;
+                  
+                    creditos = parseFloat(creditos) - (aposta1 + aposta2 + aposta3);
+                  
+                    document.getElementById("creditos").innerHTML = creditos ;
+                  
+                    corredor1.src = "./assets/images/sonic-run.gif";
+                    corredor2.src = "./assets/images/tails-run.gif";
+                    corredor3.src = "./assets/images/knuckles-run.gif";  
+                  
+                    let posCorredor1 = linhaDePartida;
+                    let posCorredor2 = linhaDePartida;
+                    let posCorredor3 = linhaDePartida;
+                    
+                    var timer = setInterval(frame, 20);
+                    
+                    function frame(){
+                      let distanciaPercorrida1 = document.getElementById("metros1");
+                      let distanciaPercorrida2 = document.getElementById("metros2");
+                      let distanciaPercorrida3 = document.getElementById("metros3");
+                  
+                      posCorredor1 += (5 * Math.random());
+                      posCorredor2 += (5 * Math.random());
+                      posCorredor3 += (5 * Math.random());
+                      
+                      corredor1.style.left = posCorredor1 + "px";
+                      corredor2.style.left = posCorredor2 + "px";
+                      corredor3.style.left = posCorredor3 + "px";
+                  
+                      distanciaPercorrida1.innerHTML = Math.round((posCorredor1 * 100) / linhaDeChegada) + "/100";
+                      distanciaPercorrida2.innerHTML = Math.round((posCorredor2 * 100) / linhaDeChegada) + "/100";
+                      distanciaPercorrida3.innerHTML = Math.round((posCorredor3 * 100) / linhaDeChegada) + "/100";
+                  
+                      if (posCorredor1 &gt;= linhaDeChegada){
+                          vitorias1++;
+                          document.getElementById("vitoria1").innerHTML = vitorias1;
+                          document.getElementById("creditos").innerHTML = creditos + (aposta1 * 2);
+                          
+                          alert("Vencedor: Corredor 1 🔵");
+                          clearInterval(timer);
+                  
+                          fimDeJogo();
+                      }
+                  
+                      if (posCorredor2 &gt;= linhaDeChegada){
+                        vitorias2++;       
+                        document.getElementById("vitoria2").innerHTML = vitorias2;
+                        document.getElementById("creditos").innerHTML = creditos + (aposta2 * 2);
+                  
+                        alert("Vencedor: Corredor 2 🟡");
+                        clearInterval(timer);
+                  
+                        fimDeJogo();
+                      }
+                  
+                      if (posCorredor3 &gt;= linhaDeChegada){
+                        vitorias3++
+                        document.getElementById("vitoria3").innerHTML = vitorias3;
+                        document.getElementById("creditos").innerHTML = creditos + (aposta3 * 2);
+                        
+                        alert("Vencedor: Corredor 3 🔴");
+                        clearInterval(timer);
+                  
+                        fimDeJogo();
+                      }    
+                    }
+                  }
+                  
+                  function fimDeJogo(){
+                    var corredor1 = document.getElementById("corredor1");
+                    var corredor2 = document.getElementById("corredor2");
+                    var corredor3 = document.getElementById("corredor3");
+                  
+                    corredor1.src = "./assets/images/sonic-idle.gif";
+                    corredor2.src = "./assets/images/tails-idle.gif";
+                    corredor3.src = "./assets/images/knuckles-idle.gif";
+                  
+                    document.getElementById("btnIniciarJogo").disabled = false;
+                  }
+                </code></pre>
+              </div>
+            </div>
+
+            <div class="tabuleiro">
+              
+              <span class="jogoHeader">Corredores</span>
+              <span class="jogoHeader">Aposta</span>
+              <span class="jogoHeader">Metros</span>
+              <span class="jogoHeader">Vitórias</span>
+            
+              <!-- ------ PISTA CORREDOR 1 -------------- -->
+            
+              <div class="pista"><img src="./assets/images/sonic-idle.gif" alt="Corredor Sonic" id="corredor1"></div>
+              <input type="number" id="txtbet1" value="0" min="0" max="1000" step="5">
+              <span id="metros1">0/100</span>
+              <span id="vitoria1">0</span>
+            
+              <!-- ------ PISTA CORREDOR 2 -------------- -->
+            
+              <div class="pista"><img src="./assets/images/tails-idle.gif" alt="Corredor Tails" id="corredor2"></div>
+              <input type="number" id="txtbet2" value="0" min="0" max="1000" step="5">
+              <span id="metros2">0/100</span>
+              <span id="vitoria2">0</span>
+            
+              <!-- ------ PISTA CORREDOR 3 -------------- -->
+            
+              <div class="pista"><img src="./assets/images/knuckles-idle.gif" alt="Corredor Knuckles" id="corredor3"></div>
+              <input type="number" id="txtbet3" value="0" min="0" max="1000" step="5">
+              <span id="metros3">0/100</span>
+              <span id="vitoria3">0</span>
+            
+              <input type="button" id="btnIniciarJogo" class="btn btn-lg btn-primary" value="Iniciar corrida!" onclick="startRace()">
+              <span><strong>Créditos</strong></span>
+              <span id="creditos">100</span>
+  
+            </div>
+          </section>
+        </section>
 
       </div>
     </div>

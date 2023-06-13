@@ -1222,4 +1222,118 @@ function exercicio60() {
 
 //#region JOGO DE APOSTAS
 
+function startRace(){
+  
+  var corredor1 = document.getElementById("corredor1");
+  var corredor2 = document.getElementById("corredor2");
+  var corredor3 = document.getElementById("corredor3");
+  
+  var linhaDePartida = 1;
+  var linhaDeChegada = (document.getElementById("jogo").offsetWidth * 0.6) - corredor1.offsetWidth - 5;
+    
+  var aposta1 = parseFloat(document.getElementById("txtbet1").value);
+  var aposta2 = parseFloat(document.getElementById("txtbet2").value);
+  var aposta3 = parseFloat(document.getElementById("txtbet3").value);
+  
+  var vitorias1 = parseInt(document.getElementById("vitoria1").innerHTML);
+  var vitorias2 = parseInt(document.getElementById("vitoria2").innerHTML);
+  var vitorias3 = parseInt(document.getElementById("vitoria3").innerHTML);
+  
+  var creditos = document.getElementById("creditos").innerHTML;
+  
+  if((aposta1 == "" && aposta2 == "" && aposta3 == "") ||
+  (aposta1 == 0  && aposta2 == 0  && aposta3 == 0)){
+    alert("Por favor, faça a sua aposta");
+    return;
+  }
+  
+  if (aposta1 == "") { aposta1 = 0 }
+  if (aposta2 == "") { aposta2 = 0 }
+  if (aposta3 == "") { aposta3 = 0 }
+  
+  if((aposta1 + aposta2 + aposta3) > creditos){
+    alert("O valor máximo que pode apostar é " + creditos);
+    return;
+  }
+
+  document.getElementById("btnIniciarJogo").disabled = true;
+
+  creditos = parseFloat(creditos) - (aposta1 + aposta2 + aposta3);
+
+  document.getElementById("creditos").innerHTML = creditos ;
+
+  corredor1.src = "./assets/images/sonic-run.gif";
+  corredor2.src = "./assets/images/tails-run.gif";
+  corredor3.src = "./assets/images/knuckles-run.gif";  
+
+  let posCorredor1 = linhaDePartida;
+  let posCorredor2 = linhaDePartida;
+  let posCorredor3 = linhaDePartida;
+  
+  var timer = setInterval(frame, 20);
+  
+  function frame(){
+    let distanciaPercorrida1 = document.getElementById("metros1");
+    let distanciaPercorrida2 = document.getElementById("metros2");
+    let distanciaPercorrida3 = document.getElementById("metros3");
+
+    posCorredor1 += (5 * Math.random());
+    posCorredor2 += (5 * Math.random());
+    posCorredor3 += (5 * Math.random());
+    
+    corredor1.style.left = posCorredor1 + "px";
+    corredor2.style.left = posCorredor2 + "px";
+    corredor3.style.left = posCorredor3 + "px";
+
+    distanciaPercorrida1.innerHTML = Math.round((posCorredor1 * 100) / linhaDeChegada) + "/100";
+    distanciaPercorrida2.innerHTML = Math.round((posCorredor2 * 100) / linhaDeChegada) + "/100";
+    distanciaPercorrida3.innerHTML = Math.round((posCorredor3 * 100) / linhaDeChegada) + "/100";
+
+    if (posCorredor1 >= linhaDeChegada){
+        vitorias1++;
+        document.getElementById("vitoria1").innerHTML = vitorias1;
+        document.getElementById("creditos").innerHTML = creditos + (aposta1 * 2);
+        
+        alert("Vencedor: Corredor 1 🔵");
+        clearInterval(timer);
+
+        fimDeJogo();
+    }
+
+    if (posCorredor2 >= linhaDeChegada){
+      vitorias2++;       
+      document.getElementById("vitoria2").innerHTML = vitorias2;
+      document.getElementById("creditos").innerHTML = creditos + (aposta2 * 2);
+
+      alert("Vencedor: Corredor 2 🟡");
+      clearInterval(timer);
+
+      fimDeJogo();
+    }
+
+    if (posCorredor3 >= linhaDeChegada){
+      vitorias3++
+      document.getElementById("vitoria3").innerHTML = vitorias3;
+      document.getElementById("creditos").innerHTML = creditos + (aposta3 * 2);
+      
+      alert("Vencedor: Corredor 3 🔴");
+      clearInterval(timer);
+
+      fimDeJogo();
+    }    
+  }
+}
+
+function fimDeJogo(){
+  var corredor1 = document.getElementById("corredor1");
+  var corredor2 = document.getElementById("corredor2");
+  var corredor3 = document.getElementById("corredor3");
+
+  corredor1.src = "./assets/images/sonic-idle.gif";
+  corredor2.src = "./assets/images/tails-idle.gif";
+  corredor3.src = "./assets/images/knuckles-idle.gif";
+
+  document.getElementById("btnIniciarJogo").disabled = false;
+}
+
 //#endregion
