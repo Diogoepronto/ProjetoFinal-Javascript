@@ -347,6 +347,8 @@
             </p>
 
             <pre><code>
+              &lt;p id="mensagemAprovado"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function exibirMensagemAprovado() {
                   var nomeFormando = prompt("Digite o nome do formando:");
@@ -357,8 +359,6 @@
                   }
                 }
               &lt;/script&gt;
-
-              &lt;p id="mensagemAprovado"&gt;&lt;/p&gt;
             </code></pre>
 
             <p id="mensagemExercicio3" class="hidden"></p>
@@ -376,6 +376,14 @@
             </p>
 
             <pre><code>
+              &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+              &lt;input type="text" id="nome" placeholder="Digite seu nome"&gt;
+
+              &lt;label for="idade"&gt;Idade:&lt;/label&gt;
+              &lt;input type="text" id="idade" placeholder="Digite sua idade"&gt;
+
+              &lt;p id="mensagem" class="hidden"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function exibirMensagem() {
                   var nomeFormando = document.getElementById("nome").value;
@@ -385,14 +393,6 @@
                   document.getElementById("mensagem").innerHTML = mensagem;
                 }
               &lt;/script&gt;
-
-              &lt;label for="nome"&gt;Nome:&lt;/label&gt;
-              &lt;input type="text" id="nome" placeholder="Digite seu nome"&gt;
-
-              &lt;label for="idade"&gt;Idade:&lt;/label&gt;
-              &lt;input type="text" id="idade" placeholder="Digite sua idade"&gt;
-
-              &lt;p id="mensagem" class="hidden"&gt;&lt;/p&gt;
             </code></pre>
 
             <label for="nomeEx4" class="label-width-sm">Nome</label>
@@ -444,26 +444,6 @@
             </p>
 
             <pre><code>
-              &lt;script&gt;
-                function exibirDados() {
-                  var nomeFormando = document.getElementById("nome").value;
-                  var estadoCivilFormando = document.getElementById("estadoCivil").value;
-                  var idadeFormando = document.getElementById("idade").value;
-                  var alturaFormando = document.getElementById("altura").value;
-                  var socioFormando = document.getElementById("socio").checked ? "Sim" : "Não";
-                  var emailFormando = document.getElementById("email").value;
-              
-                  var mensagem =  "Nome: " + nomeFormando + "&lt;br&gt;" +
-                                  "Estado Civil: " + estadoCivilFormando + "&lt;br&gt;" +
-                                  "Idade: " + idadeFormando + "&lt;br&gt;" +
-                                  "Altura: " + alturaFormando + "&lt;br&gt;" +
-                                  "Sócio: " + socioFormando + "&lt;br&gt;" +
-                                  "Email: " + emailFormando;
-                  
-                  document.getElementById("dados").innerHTML = mensagem;
-                }
-              &lt;/script&gt;
-
               &lt;label for="nome"&gt;Nome:&lt;/label&gt;
               &lt;input type="text" id="nome" placeholder="Digite seu nome"&gt;
 
@@ -490,6 +470,26 @@
               &lt;button onclick="exibirDados()"&gt;Clique aqui&lt;/button&gt;
 
               &lt;p id="dados"&gt;&lt;/p&gt;
+
+              &lt;script&gt;
+                function exibirDados() {
+                  var nomeFormando = document.getElementById("nome").value;
+                  var estadoCivilFormando = document.getElementById("estadoCivil").value;
+                  var idadeFormando = document.getElementById("idade").value;
+                  var alturaFormando = document.getElementById("altura").value;
+                  var socioFormando = document.getElementById("socio").checked ? "Sim" : "Não";
+                  var emailFormando = document.getElementById("email").value;
+              
+                  var mensagem =  "Nome: " + nomeFormando + "&lt;br&gt;" +
+                                  "Estado Civil: " + estadoCivilFormando + "&lt;br&gt;" +
+                                  "Idade: " + idadeFormando + "&lt;br&gt;" +
+                                  "Altura: " + alturaFormando + "&lt;br&gt;" +
+                                  "Sócio: " + socioFormando + "&lt;br&gt;" +
+                                  "Email: " + emailFormando;
+                  
+                  document.getElementById("dados").innerHTML = mensagem;
+                }
+                &lt;/script&gt;
             </code></pre>
 
             <label for="nomeEx6" class="label-width-md">Nome</label>
@@ -529,8 +529,10 @@
               Crie um programa que mostre na página Web a data atual do sistema: <br/>
               (Dica: utilize a Class <code>Date</code>)
             </p>
-
+            
             <pre><code>
+              &lt;p id="dataAtual"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function mostrarDataAtual() {
                   var dataAtual = new Date();
@@ -541,10 +543,7 @@
                   var mensagem = "Data atual: " + dia + "/" + mes + "/" + ano;
                   document.getElementById("dataAtual").innerHTML = mensagem;
                 }
-              &lt;/script&gt;
-
-            
-              &lt;p id="dataAtual"&gt;&lt;/p&gt;
+              &lt;/script&gt;            
             </code></pre>
 
             <p id="dataAtualEx7" class="hidden"></p>
@@ -560,6 +559,8 @@
             </p>
 
             <pre><code>
+              &lt;p id="mensagemSaudacao"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function mostrarSaudacao(){
                   var dataAtual = new Date();
@@ -578,8 +579,6 @@
                   document.getElementById("mensagemSaudacao").innerHTML = mensagem;
                 }
               &lt;/script&gt;
-
-              &lt;p id="mensagemSaudacao"&gt;&lt;/p&gt;
             </code></pre>
 
             <p id="mensagemEx8" class="hidden"></p>
@@ -611,14 +610,14 @@
             </p>
 
             <pre><code>
+              &lt;p id="urlPagina"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function mostrarURL() {
                   var enderecoURL = document.URL;
                   document.getElementById("urlPagina").innerHTML = mensagem;
                 }
               &lt;/script&gt;
-
-              &lt;p id="urlPagina"&gt;&lt;/p&gt;
             </code></pre>
 
             <p id="mensagemEx10" class="hidden"></p>
@@ -640,6 +639,13 @@
             </p>
 
             <pre><code>
+              &lt;label for="numero"&gt;Digite um número inteiro:&lt;/label&gt;
+              &lt;input type="number" id="numero"&gt;
+
+              &lt;button onclick="verificarPositivoNegativo()"&gt;Verificar&lt;/button&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function verificarPositivoNegativo() {
                   var numero = parseInt(document.getElementById("numero").value);
@@ -653,13 +659,6 @@
                   }
                 }
               &lt;/script&gt;
-
-              &lt;label for="numero"&gt;Digite um número inteiro:&lt;/label&gt;
-              &lt;input type="number" id="numero"&gt;
-
-              &lt;button onclick="verificarPositivoNegativo()"&gt;Verificar&lt;/button&gt;
-
-              &lt;p id="resultado"&gt;&lt;/p&gt;
             </code></pre>
 
             <label for="numeroEx11">Digite um número inteiro:</label>
@@ -678,6 +677,16 @@
             </p>
 
             <pre><code>
+              &lt;label for="numero1"&gt;Digite o primeiro número:&lt;/label&gt;
+              &lt;input type="number" id="numero1"&gt;
+
+              &lt;label for="numero2"&gt;Digite o segundo número:&lt;/label&gt;
+              &lt;input type="number" id="numero2"&gt;
+
+              &lt;button onclick="encontrarMaior()"&gt;Encontrar Maior&lt;/button&gt;
+
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function encontrarMaior() {
                   var numero1 = parseFloat(document.getElementById("numero1").value);
@@ -692,16 +701,6 @@
                   }
                 }
               &lt;/script&gt;
-
-              &lt;label for="numero1"&gt;Digite o primeiro número:&lt;/label&gt;
-              &lt;input type="number" id="numero1"&gt;
-
-              &lt;label for="numero2"&gt;Digite o segundo número:&lt;/label&gt;
-              &lt;input type="number" id="numero2"&gt;
-
-              &lt;button onclick="encontrarMaior()"&gt;Encontrar Maior&lt;/button&gt;
-
-              &lt;p id="resultado"&gt;&lt;/p&gt;
             </code></pre>
 
             <label for="num1Ex12">Digite o primeiro número:</label>
@@ -724,6 +723,10 @@
             </p>
 
             <pre><code>
+              &lt;p id="resultado"&gt;&lt;/p&gt;
+              
+              &lt;button onclick="novoJogo()"&gt;Novo Jogo&lt;/button&gt;
+
               &lt;script&gt;
                 function novoJogo() {      
                   var numeroAleatorio = Math.floor(Math.random() * 6) + 1;
@@ -766,11 +769,7 @@
                     }
                   }
                 }
-              &lt;/script&gt;
-
-              &lt;p id="resultado"&gt;&lt;/p&gt;
-              
-              &lt;button onclick="novoJogo()"&gt;Novo Jogo&lt;/button&gt;
+              &lt;/script&gt;              
             </code></pre>
 
             <p id="mensagemEx13"></p>
@@ -786,6 +785,8 @@
             </p>
 
             <pre><code>
+              &lt;p id="numerosOrdenados"&gt;&lt;/p&gt;
+
               &lt;script&gt;
                 function ordenarNumeros() {
                   var numero1 = verificarNumeroValido("primeiro");
@@ -811,8 +812,6 @@
                   }
                 }
               &lt;/script&gt;
-
-              &lt;p id="numerosOrdenados"&gt;&lt;/p&gt;
             </code></pre>
 
             <p id="mensagemEx14" class="hidden"></p>
